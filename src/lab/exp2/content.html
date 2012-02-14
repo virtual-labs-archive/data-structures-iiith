@@ -128,7 +128,7 @@ A good computing application of stacks is to use it to evaluating arithmetical e
 <li>
 The stack data structure is characterized by its last-in-first-out access mechanism. Thus, the element that is added most recently will be the element that is removed first on a remove call. Such an order of addition and deletion of items occurs in several natural settings. Consider for example, a stack of plates in a cafeteria.The first plate that is taken out is the plate that is on the top of the pile. This plate would be the one that is added to the pile most recently.</li>
 <li>Another example could be as follows. We are all used to text editors that allow for undo and redo operations. In such an editor, suppose S is the present text and a word w1 is deleted to get S&prime;. Then a word w2 is deleted. Now, the user wishes to undo some of the changes. To get the correct result, it is possible only if all the operations done after w1 is deleted are also undone. Moreover, these operations must be performed in their reverse order. Thus, we need a mechanism to associate a stored set of items.Irrespective of the implemenation mechanism, the stack data structure has the following basic operations.Let S be a stack.<li>&diams; create&nbsp;:Create an empty stack.</li><li>&diams;
- push(element) : Pushes the item element to the top of the stack.</li><li>&diams; pop() : Returns the item that is most recently pushed.</li><li>&diams; size() : Return the size of the stack.</li></ul>
+ push(element) : Pushes the item element to the top of the stack.</li><li>&diams; pop() : Returns the item that is most recently pushed.</li><li>&diams; size() : Return the size of the stack.</li></ul> </p>
  
 <p><li><h3>1.2 Applications of Stacks</h3>
 <h4>1.2.1 Expression Evaluation</h4><li>
@@ -144,7 +144,7 @@ For example, ab * c + is a postifix expression. Since the operators follow the o
 <li>
 In the previous section, we have seen a new way of access model to the array can result in good solutions to important applications. A queue is another such data strucure which supports operations such as insert
 and delete. One can think of analogies to several situations such as a queue at a ticket reservation office, an operating system job queue, or a queue of aeroplanes ready to take off. In all such settings, the element or the object that is first inserted is the first one to come out of the queue also. Thus, the queue is a First-In- First-Out (FIFO) data structure. This suggests that there are two quantities associated with a queue, the front and the rear. The rear indicates the position where the new elements would be added. The front indicates the position from where elements can be deleted from the queue.Formally, a queue is a data structure which supports the following operations.</li><li>&diams; insert: Insert an element to the rear of the queue</li><li>&diams; delete: Delete an element from the front of the queue.</li><li>&diams; size: Return the size of the queue</li>
-</div>
+</div> </p>
 
       </section>
 
