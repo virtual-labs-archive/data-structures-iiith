@@ -28,7 +28,7 @@ edit -->
       <!-- Write the name of your lab and link it to the home 
       page of your lab (h1 tag is preferred while writing your 
       lab name)-->
-      <a href="../index.html">Physics Lab</a>	
+      <a href="../index.html">Data Structures</a>	
     </div>
 
     <!-- Add any additional element you want to add to the lab 
@@ -51,7 +51,7 @@ edit -->
       <header id="experiment-article-heading" class="heading">
         <!-- You can add a welcome message or title of the 
         experiment here -->
-        Simple Pendulum
+        Number Systems
         <!-- Add any additional element if required with proper 
         enclosing-->
       </header>
@@ -92,29 +92,24 @@ edit -->
           <div id="experiment-article-section-1-content" 
           class="content">	
             <p>
-            In this module, basic concepts of simple oscillator 
-            are explained. Initially, an example of simple 
-            pendulum is taken and the basic terminology i.e., 
-            what is <span class="term">initial displacement</span>, <span class="term">
-            initial velocity</span>,<span class="term">natural frequency
-            </span> and <span class="term">time period</span> are explained. 
-            Each of these terms is illustrated by giving an 
-            example, where user can enter his value and observe 
-            the behavior of structure for his input.
+          Since ancient times, the ability to represent numbers and perform arithmetic operations on numbers played an important role. Hence, it is interesting to study how different representation formats impact the number representation and operations. In this experiment, we study the efficacy of various number representation formats. The central message of this experiment is to appreciate that something that is as common as operating on numbers has an embedded data structure lesson.
+In this experiment, we will first understand how operations such as addition and multiplication can be done in various formats. We focus on four formats: unary, binary, decimal, and Roman. In each of these four representation formats, we will learn how to perform the above two operations. You can look at the lecture notes, browse through slides, and also see an animation that can run several examples.
             </p>
 
-            <p>
-            Simple harmonic oscillator consists of a <span class="term"> 
-            mass (m) </span> hanging from a string of <span class="term">
-            length (l)</span>, fixed at a pivot point P. 
-            When the mass is displaced from its <span class="term"> mean 
-            position </span> by giving some initial displacement 
-            (angle), oscillator starts swinging back and fourth 
-            with <span class="term">periodic motion</span>.
-            </p>
+            <p>1.1 The Hindu/Arabic System
+This is also known as the decimal system and is presently in vogue in written communication. The systemused 10 digits 0, 1,2 ··· , 9. For instance three hundred and sixty seven is written as 367. This is a positionalnumber system with the rightmost position having a weight of 1, the next position a weight of 10, and so on.
+</p>
 
-          <img src="../images/Pendulum.JPG" alt="pendulum">
-        </div>
+<p>
+1.2.2 The Roman System
+This is a system using the symbols I, V, X, L, C, and M. This is not a positional system. As an example, 24 is written as XXIV. </p>
+
+<p>
+1.2.3 The Unary and the Binary System
+In the former, the only symbol used is I and a number is represented by writing a number of I′s equal to its value. For example, 7 is written as IIIIIII. It can be noticed that this system is too laborious for large numbers such as those beyond 20 or so.In the latter, two symbols 0 and 1 are used. This is a positional system with weights of 1, 2, 4, and so on. For instance, 55 is written as 110111. The latter is popular because of its use in the present generation computers.
+</p>
+
+      </div>
 
 
       </section>
@@ -141,30 +136,10 @@ edit -->
         <div id="experiment-article-section-2-content" 
         class="content">
           <p>
-          There are two solutions to \(ax^2 + bx + c = 0\) and 
-          they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$ 
-          </p>
-          <p>
-          By applying <span class="term">Newton's second law</span> for 
-          rotational systems, the equation of motion for the 
-          pendulum may be obtained.
-          </p> 
-
-          <p>
-          Here \(\tau\)  =  <span class="term">Torque </span>;   I  =  
-          <span class="term">Moment of Inertia</span>;
-          &alpha; = <span class="term"> Angular
-          Velocity</span>. m is mass of the oscillator, l is
-          the length of the oscillator and \(\theta\) is initial
-          displacement. 
-          </p>
-          
-          <p>							
-          If the amplitude of the angular displacement is 
-          small then we can use the approximation 
-          $$ sin \theta \approx \theta $$
-
-          </p>
+         1.2.4 Operations on Numbers
+Let us consider the basic arithmetic operations such as addition and multiplication. In the case of addition using the Hindu system, we have the notion of a carry so that if the sum of any two digits in a position with weight of 10k will create a carry of 1 with a weight of 10 k+1. The same is concept holds true for positional systems such as the binary system, with the only difference being the weights. In the unary system, the addition of numbers x and y will result in a number with x + y I′s.Addition in the Roman system is much more complicated. To add two numbers in the Roman system,one starts by writing the numbers side by side. For example, to add 32 and 53, write XXXII and LIII side by side as XXXII LIII. Then, arrange these letters so that the numerals are in decreasing order. We get:LXXXIIIII. The five Is can be simplified by writing them as V. So we get LXXXV. This process is continued till no simplification is possible. Care has to be taken when adding numbers such as 64, written as LXIV.Similar observations hold in the case of multiplication as multiplication can be treated as repeated addition in its basic form. So one way to multiply Roman numbers is to multiply the larger number by the smaller number. For example, to multiply 123 by 52, we start by writing the numbers as CXXIII and LII. Now, multiply the larger number CXIII by L. This is done by first multiplying by 10, which means promoting the symbols and then duplicating each symbol five times. Simplification can be done to reduce the number to the standard form. Then,multiplication by 2 is simply duplicating each symbol twice. Simplifying, we get the answer.
+The above reading suggests that the method of number representation does have a bearing on the ease of the operation. Hence, even with simple operations such as addition and multiplication, a better way to organize data helps in performing the operation efficiently. In the rest of this chapter, we will use the decimal/binary system. We will carry forward this lesson to other operations.
+</p>
 
         </div>
       </section>
@@ -186,10 +161,9 @@ edit -->
         <div id="experiment-article-section-3-content" 
         class="content">
           <p>
-            Objective of simple harmonic oscillator experiment 
-            is to understand the concept of <span class="term">time period 
-            </span>(natural frequency) in <span class="term"> harmonic 
-            oscillations </span>.
+            Understand the relationship between data representation and data manipulation.
+as a small practice, implement the operations ADD and MULTIPLY on four different representations.
+study the time taken for your implementations.
           </p> 
        
           <img  src="http://cite.iiit.ac.in/vlab/cITe/images/eerc/Expr1/simple-pendulum.JPG" 
@@ -210,73 +184,23 @@ edit -->
 
         <div id="experiment-article-section-4-heading" 
         class="heading">
-          Experiment
+	   Simulation
         </div>
 
         <div id="experiment-article-section-4-content" 
         class="content">
           <p>
-	        Place or link to your experiment java applet 
-	        or flash file here. 
-	        
+
+   <li><a href="#" onClick='window.open("UnarySystem.swf","Unarysystem","height=800,width=800")'>UnarySystem</a></li>    
+   <li><a href="#" onClick='window.open("RomanSystem.swf","RomanSystem","height=800,width=800")'>RomanSystem</a></li>
+   <li><a href="#" onClick='window.open("BinarySystem.swf","BinarySystem","height=800,width=800")'>BinarySystem</a></li>        
             
           </p>
         </div>
 
       </section>
 
-      <section id="experiment-article-section-5">
-   
-        <div id="experiment-article-section-5-icon" 
-        class="icon">
-	  <!-- Enclose the icon image of your lab.-->
-	  <img src="../images/manual.jpg" />
-	</div>
-
-        <div id="experiment-article-section-5-heading" 
-        class="heading">
-          Manual
-        </div>
-
-        <div id="experiment-article-section-5-content" 
-        class="content">
-          <p> 
-            Start the experiment with the default values of 
-            length, mass and intial displacement (in angle). 
-            Pause the experiment after few cycles and note 
-            the observation.
-          </p> 
-
-        <h3>Observation 1:</h3> 
-          <ol> 
-            
-            <li>
-              Find the time period of the pendulum by noting the 
-              time interval of any one complete cycle from the 
-              response graph. 
-            </li> 
-
-            <li>
-              You may note that this time period value is same 
-              for any complete cycle.
-              <a  class="more" href="cITe/Documents/eerc/
-              pdf/1.manual.pdf">Read More</a>  
-            </li> 
-
-          </ol>
-
-          <a onclick="window.open('http://cite.iiit.ac.in/vlab/cITe/media/eerc/Expr1/shm.htm', 
-          null,'scrollbars=yes, width=' + (screen.availWidth) 
-          +',height=' + (screen.availHeight)); return false;"
-
-          href="http://cite.iiit.ac.in/vlab/cITe/media/eerc/Expr1/shm.htm">		   
-          <img src="http://cite.iiit.ac.in/vlab/cITe/images/demo.JPG" 
-          alt="" width="400" height="200"></a>
-
-          </div>
-
-        </section>
-
+  
         <section id="experiment-article-section-6">
       
           <div id="experiment-article-section-6-icon" 
@@ -294,76 +218,25 @@ edit -->
           class="content">
             
             <p>
-              
-              <b>Q1.</b> 
-              Time taken for one complete oscillation 
-              is called Time Period of the oscillator. <br> 
-              <input type="radio" name="q1" id="q1" value="1"> 
-                <font color="green"> True </font> <br> 
-              <input type="radio" name="q1" id="q1" value="0">
-                <font color="red"> False </font> <br/><br/> 
-              
-              <b>Q2.</b> 
-              Time period of the oscillator is constant for 
-              given values of mass, length and initial 
-              conditions.<br> 
-              <input type="radio" name="q2" id="q2" value="1"> 
-                <font color="green"> True </font> <br> 
-              <input type="radio" name="q2" id="q2"value="0">
-                <font color="red"> False </font> <br/><br/> 
-              
-              <b>Q3.</b> 
-              Value of Time period depends on initial 
-              conditions. <br> 
-              <input type="radio" name="q3" id="q3" value="1"> 
-                <font color="green"> True </font> <br> 
-              <input type="radio" name="q3" id="q3"value="0">
-                <font color="red"> False </font> <br/><br/> 
-              
-              <b>Q4.</b> 
-              Value of time period depends on mass. <br> 
-              <input type="radio" name="q4" id="q4" value="1"> 
-                <font color="green"> True </font> <br> 
-              <input type="radio" name="q4" id="q4" value="0">
-                <font color="red"> False </font> <br/><br/> 
-              
-              <b>Q5.</b> 
-              Value of time period depends on length of the 
-              oscillator. <br> 
-              <input type="radio" name="q5" id="q5" value="1"> 
-                <font color="green"> True </font> <br> 
-              <input type="radio" name="q5" id="q5"value="0">
-                <font color="red"> False </font> <br/><br/> 
-              <input type="submit" value="Submit Answers" 
-                class="button" />
+Let us now consdier some interesting ways in which the basic experiment can be extended. <br>
+We have seen four different representation formats for numbers. Each had its own advantages and disadvantages. Consider the following representation formats.
+It holds from the fundamental theorem of arithmetic that every positive integer at least 1 can be expressed uniquely as the product of prime numbers. How would you add and multiply numbers in this format? Also, think of operations on numbers that are easier in this format than in other formats.
+<br>
+Another related representation that is possible is to use the Chinese remainder theorem. The Chinese remainder theorem is a fundamental theorem in number theory. It states that any number can be represented uniquely as the residue of relatively prime numbers. The representation is unique up to the produce of the relative primes chosen. For instance, x = 2 (mod 5), and x = 3 (mod 8), implies that x = 27.
+How would you implement the operations add and multiply using this representation. Are there operations that are simple in this format than other formats?
+<br>
+A related question to think about is to study and implement routines for multiplication in the binary number system that are different from the standard one. By standard, we mean that multiplication is treated as repeated addition. In what circumstances does your routine outperform the standard multiplication routine. Also, study the multiplication operation used in computer hardware at present.
+To carry our thoughts further, we consider the following questions. Notice that some of these questions may be open, and may not have any published solution.
+<br>
+Design a representation format for numbers so that the following operations are all efficient. The operations of interest are : add, multiply, gcd, and mod. (mod refers to integer modulo).
+<br>
+Can you design routines where the size of the numbers being handled far exceedes the number sizes that a machine word can handle. Typical number sizes that current machines can handle is about 20-25 digits. However, there are applications which require one to handle numbers of 500 digits or more. How can you support operations on such large numbers?
+
             </p>
 
           </div>
 
         </section>
-
-        <section id="experiment-article-section-7">
-	  
-          <div id="experiment-article-section-7-icon" 
-          class="icon">
-	    <!-- Enclose the icon image of your lab. -->
-	    <img src="../images/procedure.jpg" />
-	  </div>
-	
-          <div id="experiment-article-section-7-heading" 
-          class="heading">
-	    Procedure
-	  </div>
-	
-          <div id="experiment-article-section-7-content" 
-          class="content">
-	    <p>
-	      Procedure for the experiment is as follows.
-	    </p>
-	  </div>
-	
-        </section>
-			
 		
         <section id="experiment-article-section-8">
    
@@ -380,23 +253,30 @@ edit -->
 
           <div id="experiment-article-section-8-content" 
           class="content">
-            <ul>	
-              <li>
-                <a href="http://en.wikipedia.org/wiki/
-                Simple_harmonic_motion">http://en.wikipedia.org/wiki/Simple_harmonic_motion</a>
-              </li>
-              <li>
-                <a href="http://www.physics.uoguelph.ca/
-                tutorials/shm/Q.shm.html">http://www.physics.uoguelph.ca/tutorials/shm/Q.shm.html</a>
-              </li> 
-              <li>
-                Dynamics of structures by Anil K chopra. 
-              </li> 
-              <li>
-                <a href="http://surendranath.tripod.com/Applets/
-                Oscillations/SHM/SHMApplet.html">http://surendranath.tripod.com/Applets/Oscillations/SHM/SHMApplet.html</a> 
-              </li>
-            </ul>
+            
+	<ol>	
+
+	<li> You can also see slides in
+		<a href="slides-week1.ppt">Number system.PPT</a>
+		</li>
+		<li> <a href="#" onClick='window.open("week1.pdf","week1.pdf","height=400,width=400")'>ExpressionEvaluation.Pdf.</a></li>
+		<li>
+		<a href="http://turner.faculty.swau.edu/mathematics/materialslibrary/roman/">http://turner.faculty.swau.edu/mathematics/materialslibrary/roman/</a>
+		</li>
+		<li>
+		<a href="http://fourier.eng.hmc.edu/e85/lectures/arithmetic_html/node2.html">http://fourier.eng.hmc.edu/e85/lectures/arithmetic_html/node2.html</a>
+		</li> 
+ 		<li>
+		<a href="http://www.swarthmore.edu/NatSci/echeeve1/Ref/BinaryMath/BinaryMath.html">
+		http://www.swarthmore.edu/NatSci/echeeve1/Ref/BinaryMath/BinaryMath.html
+		</a> 
+		</li>
+		<li>
+		<a href="http://gwydir.demon.co.uk/jo/numbers/index.htm">
+		http://gwydir.demon.co.uk/jo/numbers/index.htm
+		</a> 
+		</li>
+	</ol>
           </div>
 
         </section>
