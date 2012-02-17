@@ -103,7 +103,7 @@
 	experiment content sits-->
 	<article id="experiment-article">
 
-	<div class="breadcrumb" id="experiment-article-breadcrumb"><a href="<?php echo $vlab_url?>">Home</a><a></a> &gt; <a href="<?php echo $lab_url?>">Data Structres</a>    </div>
+	<div class="breadcrumb" id="experiment-article-breadcrumb"><a href="<?php echo $vlab_url?>">Home</a><a></a> &gt; <a href="<?php echo $lab_url?>">Data Structures</a>    </div>
 	  
 	<!-- The lab article has an header, optional navigational 
 	menu, number of sections, an optional sidebar and a closing 
