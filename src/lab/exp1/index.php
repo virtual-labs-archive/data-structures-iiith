@@ -36,10 +36,11 @@ $data['nav'] = $nav;
 //print_r($nav);
 
 $vlab_url = "http://virtual-labs.ac.in/"; 
-$css_js   = "http://deploy.virtual-labs.ac.in/labs/cse01/"; 
+$css_js   = "../"; 
 $lab_url  = "http://deploy.virtual-labs.ac.in/labs/cse01/index.php";
 $exp_url  =  "http://deploy.virtual-labs.ac.in/labs/cse01/exp1/index.php";
 $base_url = $exp_url;
+$base_url = "http://".$_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'];
 
 include('../exp_template.php');
 
