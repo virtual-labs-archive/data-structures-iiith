@@ -84,7 +84,7 @@
       
      </a>
 	</div>
-
+	
 	<div id="experiment-header-heading" class="heading">
 	<!-- Write the name of your lab and link it to the home 
 	page of your lab (h1 tag is preferred while writing your 
