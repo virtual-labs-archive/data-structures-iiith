@@ -36,9 +36,9 @@ $data['nav'] = $nav;
 //print_r($nav);
 
 $vlab_url = "http://virtual-labs.ac.in/"; 
-$css_js   = "http://deploy.virtual-labs.ac.in/labs/cse01/"; 
-$lab_url  = "http://deploy.virtual-labs.ac.in/labs/cse01/index.php";
-$exp_url  =  "http://deploy.virtual-labs.ac.in/labs/cse01/exp3/index.php";
+$css_js   = "../"; 
+$lab_url  = "../index.php";
+$exp_url  =  "./index.php";
 $base_url = $exp_url;
 $css_js   = "../"; 
 $base_url = "http://".$_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'];
