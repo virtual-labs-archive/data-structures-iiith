@@ -43,7 +43,7 @@ $base_url = $exp_url;
 $base_url = "http://".$_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'];
 
 include('../exp_template.php');
-
+include_once("../analyticstracking.php");
 ?>
 
 
