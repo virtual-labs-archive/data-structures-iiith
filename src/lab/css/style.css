@@ -342,7 +342,9 @@ aside
 
 #experiment-article-breadcrumb
 {
- margin-left: 30px;
+ /*margin-left: 30px;*/
+ width:1024px;
+margin:0 auto;
 }
 
 #experiment-article-breadcrumb a:link, #experiment-article-breadcrumb a:visited
