@@ -11,7 +11,7 @@ Congrats !!
 
 You need to added 3 more sections on virtual lab home page
 
-3) Target Audience
+3) Target Audience   
 4) Courses Aligned
 5) Pre-requisite Softwares
 
