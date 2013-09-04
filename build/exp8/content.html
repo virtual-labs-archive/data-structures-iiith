@@ -1,0 +1,385 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" class="default">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.php">Data Structures</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+	Shortest Paths in Graphs 
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+<p> 
+In this experiment, we look at the weighted version of Breadth First Search(BFS). In BFS, we have measured <i>ds(v)</i> in terms of 
+number of edges in the path from the starting vertex <i>s</i> to <i>v</i>. This is equivalent to assuming that each edge in the graph 
+has equal (unit) weight.
+Here we consider a more general setting, where we are given a weighted graph <i>G = (V, E, W)</i> with a weight function <i>W : E &ndash;&gt; R</i>.
+A typical example is Road networks, where junctions can be treated as vertices and roads as edges with distance as its corresponding 
+weights. A typical problem is to find the shortest distance between two junctions <i>u</i> and <i>v</i>, where the distance is the 
+sum of weights of edges along a <i>u</i> --- <i>v</i> path.
+      </div>
+
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+
+<p>
+<h3>Bellman-Ford</h3>
+Lets look at a simple method, by extending the approach used in BFS. We define <i>ds(v)</i> as the minimum cost of a path from
+<i>s</i> to <i>v</i>. Initially <i>ds(v) = &infin;</i> for all vertices <i>v</i> except <i>s</i>, and <i>ds(s) = 0</i>. Recall that in BFS,
+ we say a node is finished if it is in the queue. If we directly enqueue all the neighbors <i>v</i> of a vertex <i>u</i> in to the 
+ queue and mark them as finished, it may not work for this weighted version. There can be another path from <i>u</i> to <i>v</i>
+
+ with more number of edges but with smaller cost. So, we may have to change <i>ds(v)</i> while <i>v</i> is still in queue. If you
+ consider the same argument using paths with more edges but with smaller cost, even this may not work. We may need to update
+ <i>ds(v)</i> even when <i>v</i> is not in queue and can do so as long as there are changes to some <i>ds(v)</i>. This suggests that we
+ need not have a queue and as there are only a finite number of edges in any shortest path, the updations will stop eventually. This is the
+ Bellman-Ford single source shortest path algorithm and is descibed below.
+ 
+<p>
+
+<i>
+<b>Algorithm Bellman-Ford(G,S)</b> <br>
+&nbsp;for all vertices v do <br>
+&nbsp;&nbsp;&nbsp;ds(v) = &infin;; from(v) = NIL;<br>
+&nbsp;end-for<br>
+&nbsp;for n-1 iterations do<br>
+&nbsp;&nbsp;&nbsp;for each edge (v,w) do <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ds(w) &gt; ds(v) + W(v,w) then<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ds(w) = ds(v) + W(v,w); from(w) = v;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end-if<br>
+&nbsp;&nbsp;&nbsp;end-for<br>
+&nbsp;end-for<br>
+<b>End-Bellman-Ford</b><br>
+</i>
+</p>
+
+<p> 
+The algorithm requires <i>O(mn)</i> time, where <i>n</i> is the number of vertices and <i>m</i> is the number of edges.
+For each of the <i>n</i>-1 iterations, we consider each edge once.
+
+
+<br><br>
+
+<h3>Dijkstra</h3>
+
+The time taken by the Bellman-Ford algorithm is too high because of repeatedly considering edges and updating <i>ds(v)</i> 
+possibly many times. We need to know when to stop updating <i>ds(v)</i> for a vertex <i>v</i> and we will now see a method
+which captures this and improves the runtime. A vertex <i>v</i> is done, when no further shorter path can be found to it 
+from <i>s</i> i.e., when <i>ds(v)</i> can no longer decrease. We consider a few vertices, say <i>S</i>, are done. A vertex with 
+the smallest <i>ds</i> value among the vertices in <i>V(G) \ S</i> can no longer improve its <i>ds</i> value. This is because, 
+any more change would involved using at least one more additional edge. This suggests that the vertex with the smallest <i>ds</i> value
+ can be moved to the set <i>S</i>. Initially, only the starting vertex <i>s</i> is in the set <i>S</i> and we incrementally
+ populate <i>S</i> with more vertices.
+We can proceed iteratively and in each iteration, move a vertex with the least <i>ds</i> value to set <i>S</i>. When we move a 
+vertex <i>v</i> to <i>S</i>, the neighbors of <i>v</i> may find a better path from <i>s</i>, so we have to update <i>ds(w)</i> for 
+neighbors <i>w</i> of <i>v</i>, if necessary.
+
+The only steps left to take care is, finding a vertex in <i>V(G) \ S</i> that has the least <i>ds</i> value. Also, we have to update the
+
+<i>ds</i> values of vertices in <i>V(G) \ S</i> if needed. This is very similar to Prims algorithm for finding a Minimum Spanning Tree, 
+except that the costs <i>ds</i> are added with the edge weights for updation.
+We can use a Binary Heap here. This is the Dijkstras single source shortest path algorithm and is described below.
+
+<p>
+<i>
+<b>Algorithm Dijkstra(G,s)</b> <br>
+&nbsp;for all vertices v do<br>
+&nbsp;&nbsp;&nbsp;ds(v) = infin;; from(v) = NIL;<br>
+
+&nbsp;end-for<br>
+&nbsp;ds(s) = 0;<br>
+&nbsp;S = &Phi;<br>
+&nbsp;for n iterations do<br>
+&nbsp;&nbsp;&nbsp;v = the vertex with the least ds() value among V \ S;<br>
+&nbsp;&nbsp;&nbsp;Add v to S<br>
+&nbsp;&nbsp;&nbsp;for each neighbor w of v in V \ S do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d(w) = min { d(w), d(v) + W(v,w) }<br>
+&nbsp;&nbsp;&nbsp;end-for<br>
+
+&nbsp;end-for<br>
+<b>End-Dijkstra</b><br>
+</i>
+</p>
+
+<p>
+We will analyze the algorithm when using a binary heap. A binary heap is built out of the n nodesa and there are <i>n</i> 
+DeleteMin() operations and at most <i>m</i> DecreaseKey() operations. Each DeleteMin() takes <i>O(log n)</i> time and each
+ DecreaseKey() operation takes <i>O(log n)</i> time. So, the total time is <i>O((n+m)log n)</i>.
+
+
+
+</div> 
+
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+         <p> At the end of this experiment, you will be able to:<br><br>
+<p> * Understand what a shortest path is
+<p> * Perform Bellman-Ford single source shortest path on a graph
+<p> * Perform Dijkstra single source shortest path on a graph
+
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+	   Simulation
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+       <h2> Simulation </h2>
+	<ul>   <li>Find out how the algorithm works in practice using the following 
+		simulation.
+	<a href="#" onClick='window.open("Dijkstra.swf","ExpressionTree","height=900,width=1200")'>Dijkstra's Algorithm -- A Simulation</a>
+	
+	
+	</ul>
+        </div>
+
+      </section>
+
+  
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+<ul>
+
+<li> Consider an example graph of 10 vertices and 15 edges. Pick a
+source vertex s, and using Dijkstra's algorithm find the shortest path
+from s to all other vertices.
+</li>
+
+<li> Dijkstra's algorithm requires that no edge weight is negative. Why
+is this restriction required? At what place does the algorithm fail if
+this restriction is removed? Can you create an example graph with one
+edge of negative weight where Dijkstra's algorithm fails?
+</li>
+
+<li> Suppose that the edge weights in a graph are all either 1 or 2. Can
+you modify Dijkstra's algorithm to run faster? If so, describe your
+approach and analyze the runtime of your approach.
+</li>
+
+<li> Generalize the above question where the edge weights are between
+1 and W.
+</li>
+
+<li> Is it ture that in any graph there exists an ordering of the
+vertices as v1, v2, ..., vn, so that when relaxing the edges with one
+end point being vi in the ith iteration, shortest paths from v1 to all
+other vertices can be found in a total time of O(m+n)? If so, how can
+one find such an ordering? You can assume that the graph has no edges of
+negative weight.
+</li>
+
+<li> Consider the setting of the above question. How does Dijkstra's
+algorithm find this sequence? 
+</li>
+
+<li> If G is a directed acyclic graph, is finding the above sequence any
+easier then applying Dijkstra's algorithm? If so, how?
+</li>
+
+</ul>
+        </div>
+
+        </section>
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+<h2> References </h2>
+<li>A presentation that essentially presents the above material can be accessed in <a href="#"
+onClick='window.open("ShPaths.ppt","Shortest Paths","height=400,width=400")'>Slides(ppt).</a></li>
+
+<li> <a href="#" onClick='window.open("tree.pdf","tree","height=400,width=400")'>Notes(pdf).</a></li>
+          </div>
+
+        </section>
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+  <footer id="lab-footer" class="default">
+    <!-- Put the content here-->
+  </footer>
+
+</div>		
+
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" class="default">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.php">Data Structures</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+	Polynomial Operations
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+           <p>  This experiment guides you using Linked lists in a practical example. This is useful if you want to understand linked lists or if you want
+to see a realistic, applied example of pointer-intensive code.
+In this experiment, you will essentially use linked lists to add and multiply 
+(sparse) polynomials. </p> 
+      </div>
+
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+          <p>
+
+	 
+<p align="justify"><li><h3>The Array Data Structure</h3></li>
+<li>In this framework, we now see the array as a data structure. The typical operations on this data structure are as follows:</li>
+<li> &diams; to create an array data structure, called create(name, size),</li>
+<li>&diams; to access the element at a given index i, called ElementAt(index, name),</li>
+<li>&diams; to find the size of the array, called size(name), and</li>
+<li>&diams; to print the contents of the array, called print(name).</li>
+<li>While we are used to writing A[i] to access element i of an array A, it can be seen as the way to access the ith element in a non-object oriented programming language. The other operations are also not explicity specified when one uses languages such as C. But, when one considers purely object oriented languages, such operations are required to be supported. Similarly, in C, array creation is done by malloc() or a compile time declaration as int A[10];. However, when one looks at a data structure in terms of its operations, a create() operation is required.</li>
+</p>
+
+
+
+</p> Linked lists are useful to study for two reasons. Most obviously, linked lists are a data structure which you may want to use in real programs. Seeing the strengths and weaknesses of linked lists will give you an appreciation of the some of the time, space, and code issues which are useful to thinking about any data structures in general.Somewhat less obviously, linked lists are great way to learn about pointers. In fact, you may never 
+use a linked list in a real program, but you are certain to use lots of pointers. Linked list problems are a nice combination of algorithms and pointer manipulation. Traditionally, linked lists have been the domain where beginning programmers get the practice to really understand pointers.</p>
+
+
+<h2>Application of linked lists is to polynomials</h2>
+We now use linked lists to perform operations on polynomials. Let f(x) = &#931;<sup>d</sup><sub>i=0</sub> a<sub>i</sub>x<sup>i</sup>. The quantity d is called as the degree of the polynomial, with the assumption that a<sub>d</sub> not equal to 0. A polynomial of degree d may however have missing terms  i.e., powers j such that 0 <= j < d and a<sub>j</sub> = 0.The standard operations on a polynomial are addition and multiplication. If we store the coefficient ofeach term of the polynomials in an array of size d + 1, then these operations can be supported in a straightforwardway. However, for sparse polynomails, i.e., polynomials where there are few non-zero coefficients,this is not efficient.
+One possible solution is to use linked lists to store degree, coefficient pairs for non-zero coefficients.With this representation, it makes it easier if we keep the list of such pairs in decreasing order of degrees.</li>
+
+<li>A polynomial is a sum of terms.Each term consists of a coefficient and a (common) variable raised to an exponent. We consider only integer exponents, for now.<br>
+Example: 4x<sup>3</sup> + 5x &#150; 10.<br>How to represent a polynomial?Issues in representation,should not waste space,should be easy to use it for operating on polynomials.Any case, we need to store the coefficient and the exponent.<br>
+
+
+struct node <br>
+{<br>
+	float coefficient;<br>
+	int exponent;<br>
+	struct node *next;<br>
+}<br><br>
+
+Can we use a linked list?. Each node of the linked list stores the coefficient and the exponent.Should also store in the sorted order of exponents.<br>
+</li><li><br>
+
+Let us now see how two polynomials can be added.Let P1 and P2 be two polynomials stored as linked lists in sorted (decreasing) order of exponents
+The addition operation is defined as follows.Add terms of like-exponents.We have P1 and P2 arranged in a linked list in decreasing order of exponents.
+We can scan these and add like terms.Need to store the resulting term only if it has non-zero coefficient.The number of terms in the result polynomial P1+P2 need not be known in advance.We'll use as much space as there are terms in P1+P2.<br><br>
+
+Adding  polynomials :<br>&nbsp;&nbsp;&nbsp;&nbsp;(3x<sup>5</sup> &#150; 9x<sup>3</sup> + 4x<sup>2</sup>) + (&#150;8x<sup>5</sup> + 8x<sup>3</sup> + 2)<br>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp; 3x<sup>5</sup> &#150; 8x<sup>5</sup> &#150; 9x<sup>3</sup> + 8x<sup>3</sup> + 4x<sup>2</sup> + 2
+<br>&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp; &#150;5x<sup>5</sup> &#150; x<sup>3</sup> + 4x<sup>2</sup> + 2<br><br>
+
+Multiplying polynomials:<br>&nbsp;&nbsp;&nbsp;&nbsp;(2x &#150; 3)(2x<sup>2</sup> + 3x &#150; 2)<br>&nbsp;&nbsp;&nbsp;&nbsp; = 2x(2x<sup>2</sup> + 3x &#150; 2) &#150; 3(2x<sup>2</sup> + 3x &#150; 2)<br>&nbsp;&nbsp;&nbsp;&nbsp;= 4x<sup>3</sup> + 6x<sup>2</sup> &#150; 4x &#150; 6x<sup>2</sup> &#150; 9x+ 6<br>&nbsp;&nbsp;&nbsp;&nbsp;= 4x<sup>3</sup> &#150; 13x+ 6
+ 
+
+
+<!-- <img src="images1">pointer</img> -->
+
+
+<p><ul><li><b>Why Linked Lists?</b></li><br><li>Linked lists and arrays are similar since they both store collections of data. The terminology is that arrays and linked lists store "elements" on behalf of "client" code. The specific type of element is not important since essentially the same structure works to store elements of any type. One way to think about linked lists is to look at how arrays work and think about alternate approaches.</li><ul>
+
+<ul> <li>The disadvantages of arrays are...</li><br>
+
+<li>&diams; The size of the array is fixed to some elements. Most often this size is specified at compile time with a simple declaration such as in the
+example above . With a little extra effort, the size of the array can be deferred until the array is created at runtime, but after that it remains fixed. (extra for experts) You can go to the trouble of dynamically allocating an array in the heap and then dynamically resizing it with realloc(), but that requires some real programmer effort.</li>
+<li>&diams; Because of (1), the most convenient thing for programmers to do is to allocate arrays which seem "large enough". Although convenient, this strategy has two disadvantages: 
+<li>&nbsp; &nbsp;a)most of the time there are just 20 or 30 elements in the array and 70% of the space in the array really is wasted. </li>
+<li>&nbsp; &nbsp;b) If the program ever needs to process more than fixed size, the code breaks.
+A surprising amount of commercial code has this sort of naive array allocation which wastes space most of the time and crashes for special occasions. (Extra for experts) For relatively large arrays (larger than 8k bytes), the virtual memory system may partially compensate for this problem, since the "wasted" elements are never touched.</li>
+<li>&diams; Inserting new elements at the front is potentially expensive because existing elements need to be shifted over to make room.</li></ul></p>
+	 
+</div> </p>
+
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+         <p> At the end of this experiment, you will be able to:<br><br>
+<p> * Use Linked list to do operations on polnomials.
+<p> * Know applications of Linked lists .
+<p> * Understand how linked lists overcomes the disadvantage of arrays.
+
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+	   Simulation
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+        <ul>   <li>See animated polynomial operations addition and multiplication using Linked lists 
+	<a href="#"
+	onClick='window.open("polynomial.swf","polynomial","height=900,width=1200")'>Polynomial Operations.</a>
+	
+	
+	</ul>
+        </div>
+
+      </section>
+
+  
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+            
+         
+<h2> Basic Problems </h2>
+
+<p> 1.In a standard linked list, you can only traverse the list in one direction. Using doubly linke list it may be useful however, to be able to go both forwards and backwards.The only difference here compared to the Node class we used for a standard linked list is an extra reference prev. 
+<p> 2.The variations from the standard linked list is Circular linked list. The only difference between here and a standard linked 
+list is that the next component of the last node in the list references the first node in the list. One of the main issues to keep track of here is making sure that you don't iterate through the list forever, (since no next reference in the entire list will ever be null.)
+<p> 
+3. A stack and a queue can be implemented using an array. However,the fact that one has to specify upfront the maximum number of elements that the stack can contain, is a limitation. To overcome that problem, one can use a linked list to implement a stack.Recall that a stack is a last-in-first-out based data structure. When using a linked list to support a stack, we should know how to translate push() and pop() of stack to linked list operations.We now would be seeing an implementation of an ADT using another ADT.
+The head of the list can be thought of pointing to the top of the stack. The Push operation adds an element to the list at the head.The Pop operation deletes the element at the head of the list.The push() operation can simply be translated to an insert at the beginning of the list. This suggests that pop would simply be translated to a remove operation at the front of the list.Does this keep the LIFO order ? Check it.
+
+<p> 4.For a queue however, we need both the front and the rear. For this purpose, one can think of maintaining both the head and the tail of the list. The front of the queue can be the tail and the rear of the queue can be the head of the list.Which kind of linked list to use?A doubly linked list may help.It has a head and a rear identical to the front and rear of a queue.Can then translate queue operations Insert and Delete into insert and remove operations on a doubly linked list.
+
+
+<h2> Easy Problems </h2>
+<ul>
+<li>1. Write a program to reverse the contents of a singly linked list. Your program
+cannot use any additional space beyond O(1) space. 
+
+
+
+<li> 2. Implement the following set operations using linked lists. A set S is represented
+using a linked list by having one element of the set in each node. For instance, 
+S = {12, 17, 9, 22} is represented as head->12->17->9->22. The universe is the 
+set of positive integers. Now, write programs to :
+
+<ul>
+<li>(a) compute the union of two sets S1 and S2. The output is a new list S that 
+contains elements in S1 U S2.
+<li>(b) compute the intersection of two sets S1 and S2. The output is a new list 
+that contains the elements in S1 interesect S2. 
+<li>(c) the difference of sets S1 and S2.
+</ul>
+
+<li> 3. Given a linked list L with n nodes and a permutation P of the first n 
+integers. Write a program to output a linked list L' so that the i^th element 
+in L is at position P(i) in L'. An example is given below. Let L be 1->3->8->5.
+Let P be (4,1,2,3). Then L' should be 3->8->5->1. Print output (L') for 
+each test case on seperate lines.
+
+</ul>
+<h2> Difficult Problems </h2>
+<ul>
+<li> 4. A sparse matrix is matrix where each row has very few nonzero
+elements. Therefore, it is not worthwhile to store a sparse matrix
+in a two -dimensional array as most of the array would be unused.
+There are several ways to represent sparse matrices. One of them is
+to use the Compressed Sparse Row (CSR) format where there are 3
+arrays, say data, cols, and ptr. The data array contains all the
+values of the nonzero elements. The cols array contains the
+indices of the columns that contain nonzero elements. Indices of a
+row are kept in contiguous positions and in sorted order of column
+indices. In the ptr array of size n, ptr[i] contains the index of
+the first element of nonzero elements of row i. Further, elements
+of row i are stored in the cols array before elements of row i+1.
+
+With the above representation, write a program to add two sparse
+matrices and multiply two sparse matrices. The output should also
+be written in the same format as the input.
+</li>
+
+<li> 5. Read Problem 4 for bakcground on sparse matrices.
+There are several ways to represent sparse matrices. One way is to
+store the nonzero elements of each row in a linked list. Each
+element of the list contains a column index and the value of the
+corresponding nonzero element. Use the above representation to
+write programs to add and multiply two sparse matrices. The output
+matrix should be represented in the same format. You are also not
+allowed to convert from this representation to other
+representations.
+</li>
+</ul> 
+
+          </div>
+
+        </section>
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+ <li>A presentation that essentially presents the above material can be accessed in <a href="#" onClick='window.open("linkedlist.ppt","linkedlist","height=400,width=400")'>LinkedList.ppt.</a></li> 
+
+<li> <a href="#" onClick='window.open("Linkedlist.pdf","Linkedlist","height=400,width=400")'>LinkedList.pdf.</a></li>
+
+<!--
+<li> <a href="#"
+onClick='window.open("polynomial_basic.pdf","polynomial_basic","height=400,width=400")'>polynomial_basic.pdf.</a></li>
+
+<li> <a href="#" onClick='window.open("Operations on Polynomials.pdf","Operations on Polynomials","height=400,width=400")'>Operations on Polynomials.pdf.</a></li>
+&nbsp;
+-->
+
+A brief summary of the above material is presented below. 
+<p><h3> Linked List</h3>
+
+<p> <li>A linked list is a way of organizing a list of elements with basic operations insert and delete and other operations such as find and print. Though an array can be used to support these operations, it can be seen that each operation requires a time O(n), where the array has n elements. Moreover, if we extend the semantics of the insert operation to insert not just at the end but also at any point, then such an operation is very impractical.The linked list is a list of nodes not necessarily contiguously allocated in memory but are linked together so that each node contains information required to access the next node. This information is also called as the variable next.</li>
+
+<li>The linked list data structure supports the following operations. We assume that the location of the first node is given by the special vairable called head.<li><ul>
+<li>&nbsp;&#149; Insert(x, a) : Insert x next to element a in the list.</li>
+<li>&nbsp;&#149; Remove(x): Remove element x from the list.</li>
+<li>&nbsp;&#149; Find(x) : Find and return, if present, the location of element x.</li>
+<li>&nbsp;&#149; Print() : Print the contents of the list.</li> </ul></li>
+<li>Using C style pointers, the following is the pseudocode for the operations. We assume that we have a structure such as:<br><br>struct node &nbsp; &#123;<br>int value;<br>struct node *next;<br>&#125;<br><br> </li> <li> With the above definition of a structure, let us implement the above operations. Given a linked list via the head pointer, let us first implement the operations Find and Print.<br><br>
+
+Algorithm Find(x)<br>
+begin<br>
+temphead = head;<br>
+while (temphead != NULL) do<br>
+if temphead ->data == x then<br>
+return temphead;<br>
+temphead = temphead ->next; end-while<br>
+return NULL;<br>
+end<br><br>
+
+
+Algorithm Print()<br>
+begin<br>
+temphead = head;<br>
+while (temphead != NULL)<br>
+Print(temphead ->data);<br>
+tempead = temphead ->next;<br>
+end-while<br>
+end<br><br>
+
+
+The insertion and removal of items from a linked list requires that we have a pointer to the place of
+insertion/deletion.</li> 
+
+<li>To insert, where do we insert?<br>
+Several options possible<br>
+&#149; insert at the beginning of the list<br>
+&#149; insert at the end<br>
+&#149; insert before/after a given element.<br>
+Each applicable in some setting(s).<br>
+
+Algorithm Insert(item)?<br>
+begin<br>
+	temphead = head;<br>
+	newnode = new node;<br>
+	newnode->next = head;<br>
+end<br><br></li>
+
+<li>Remove also has different possibilities.Remove from the front,Remove before/after a given element,Remove an existing element.Turns out each has application in some setting.</li>
+<li>We'll see a few	applicationsThere are several variations to the linked list.The one seen so far is called as the singly linked list.Sometimes people use a doubly linked list.Each node points to the predecessor as well as its successor.Has two special pointers  head and rear</li>
+
+          </div>
+
+        </section>
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+  <footer id="lab-footer" class="default">
+    <!-- Put the content here-->
+  </footer>
+
+</div>		
+
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" class="default">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.php">Data Structures</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+	Spanning Trees in Graphs
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+<p>
+In this experiment, we will see a famous problem in graphs, finding the Minimum Spanning Tree. Let <i>G = (V, E, W)</i> be 
+a weighted graph. Find a subgraph <i>G'</i> of <i>G</i> that is connected and has the smallest cost, where cost is defined as 
+the sum of the edge weights of all edges in <i>G'</i>. Observe that if <i>G'</i> has a cycle, we can remove one of the edges
+along a cycle and still the resultant graph will remain connected and has smaller cost than <i>G'</i>. Hence, <i>G'</i> cannot be
+have a cycle and as it has to be connected, <i>G'</i> must be a tree. We define <i>G'</i> as a spanning subgraph of <i>G</i> iff
+<i>V(G) = V(G')</i> and a spanning subgraph that is also a tree is called a spanning tree of <i>G</i>. Our aim is to find a spanning tree
+of <i>G</i> that has the least cost and such a spanning tree is called as minimum spanning tree (MST) of <i>G</i>.
+<br/><br/>
+      </div>
+
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+
+Lets look at a simple method to find the MST of a given graph <i>G</i>. We start with a spanning graph of <i>G</i> with no edges initially
+and keep adding edges one by one. As we want to minimize the total cost, we should prefer to add edges with smaller weights first, but
+should not add edges that create cycles. This method of greedily picking the edges to form a MST is called the Kruskal's algorithm, and
+is described below.
+<p>
+<i>
+<b>Algorithm Kruskals(G)</b> <br/>
+&nbsp;&nbsp;sort the edges of G in increasing order of  weight as e1, e2, ..., em<br/>
+&nbsp;&nbsp;i = 1; E(T) = &Phi;<br/>
+&nbsp;&nbsp;while |E(T)| &lt; n-1 do <br/>
+&nbsp;&nbsp;&nbsp;if E(T) &cup; ei does not have a cycle then<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E(T) = E(T) &cup; ei<br/>
+&nbsp;&nbsp;&nbsp;end-if<br/>
+&nbsp;&nbsp;&nbsp;i = i + 1;<br/>
+&nbsp;&nbsp;end-while<br/>
+<b>End-Kruskals</b><br/>
+</i>
+</p>
+
+We still need to implement the cycle checker. The simplest way to do this is as follows. Suppose we want to check if adding a edge
+<i>(u,v)</i> can create a cycle or not. Before adding the edge <i>(u,v)</i>, perform a depth first search (DFS) starting from 
+<i>v</i> to see if the vertex <i>u</i> can be reached from <i>v</i>. If it can be reached, then adding <i>(u,v)</i> will create a cycle.
+The time taken for DFS is <i>O(m+n)</i> and for a tree <i>m = O(n)</i>, so the running time is <i>O(n)</i>. In the worst case, we need to
+try all <i>m</i> edges, so the running time of Kruskal's algorithms if we use a simple cycle checker is <i>O(mn)</i>. Using some advanced
+datastructures, we can bring down the running time to <i>O(m log n)</i>. We will now look at a much simpler solution with smaller runtime,
+using basic data structures.
+<br/>
+
+<p>
+In this approach, we maintain a single tree <i>T</i> at any time. In each iteration, <i>T</i> is extended by adding one vertex 
+<i>v</i> not in <i>T</i> and one edge from <i>v</i> to some vertex in <i>T</i>. Starting from a tree of one node, this process is 
+repeated (<i>n</i>-1) times. For each vertex <i>v</i> in <i>G</i>, there must be at least one edge in any MST. Considering the 
+edge of the smallest weight is useful as it can decrease the cost of the spanning tree. So, for any vertex <i>v</i>, the edge with
+the least weight among all edges having one of its end points as <i>v</i>, is always contanied in any MST of <i>G</i>.
+
+Let <i>T</i> is a subtree of some MST of an undirected weighted graph <i>T</i>. Consider edges <i>(u,v)</i> in <i>G</i> such that 
+<i>u</i> is in <i>T</i> and <i>v</i> is not in <i>T</i>. Of all such edges, let <i>e = (x,y)</i> be the edge with the smallest weight. 
+Then <i>T &cap; {e}</i> is also a subtree of some MST of <i>G</i>. This suggests an incemental method of constructing a MST. This algorithm
+is called Prim's algorithm, and is described below.
+
+<p><i>
+<b>Algorithm Prims(G,v)</b><br/>
+&nbsp;&nbsp;       Add v to T;<br/>
+&nbsp;&nbsp;        While T has less than n  1 edges do<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; w = vertex s.t. (v,w) has the smallest weight amongst edges with one endpoint in T and another not in T.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; Add (v,w) to T.<br/>
+ &nbsp;&nbsp;       end-while<br/>
+<b>End-Prims</b><br/>
+</i></p>
+<br/>
+
+The only thing left is to efficiently find the vertex <i>w</i> in the above algorithm. For this purpose, we associate a key to every 
+vertex and <i>key[v]</i> is the smallest weight of edges with <i>v</i> as one endpoint and another in the current tree <i>T</i>. 
+A <i>key[v]</i> changes only when some vertex is added to <i>T</i> and also vertex with the smallest <i>key[v]</i> 
+is the one to be added to <i>T</i>. When a vertex is added to <i>T</i>, only its neighboring vertices may have to update their keys.
+Therefore, we can maintain a heap of vertices with their <i>key[]</i> values and perform the above algorithm as follows.
+<br/>
+
+<p><i>
+<b>Algorithm Prims_heap(G, u)</b><br/>
+&nbsp;&nbsp; for each vertex v do key[v] = &infin;<br/>
+&nbsp;&nbsp; key[u] = 0;<br/>
+&nbsp;&nbsp; Add all vertices to a heap H.<br/>
+&nbsp;&nbsp; While T has less than n-1 edges do<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; v = deleteMin();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; Add v to T via uv s.t. u is in T<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; For each neighbor w of v do  <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if W(vw) &gt; key[w] then DecreaseKey(w)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; end-for<br/>
+&nbsp;&nbsp; end-while<br/>
+<b>End-Prims_heap</b><br/>
+</i></p>
+<br/>
+
+
+<u>Runtime:</u> Each vertex is deleted once from the heap. Each DeleteMin() takes <i>O(log n)</i> time. So, this accounts
+ for a time of <i>O(n log n)</i>. Each edge may result in one call to DecreaseKey(). Over <i>m</i> edges, this accounts for 
+ a time of <i>O(m log n)</i>. Total time = <i>O((n+m)log n)</i>.
+
+
+	 
+</div> 
+
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+         <p> At the end of this experiment, you will be able to:<br><br>
+<p> * Know the concept of spanning trees and minimum spanning trees
+<p> * Understand algorithmic approaches to finding minimum spanning trees in graphs
+<p> * Understand the data structures required to efficeintly implement algorithms for 
+minimum spanning trees.
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+	   Simulation
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+       <h2> Simulation </h2>
+	<ul>   <li>The simulation shows how to construct a MST using Kruskal's algorithm. </li>
+	<a href="#"
+	onClick='window.open("MinimumSpanningTree.swf","ExpressionTree","height=900,width=1200")'>Minimum Spanning Tree in a Graph</a>
+	
+	
+	</ul>
+
+        </div>
+
+      </section>
+
+  
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+<ul>
+<li> Take an example graph of about 10 vertices and 20 edges. Assign
+weights to edges and use the algorithm of Kruskal to find a minimum
+spanning tree.
+</li>
+<li> In a graph G, let the edge uv have the least weight. Is it true
+that uv is always part of any minimum spanning tree of G? Is it true
+that uv is always part of some minimum spanning tree of G? Justify your
+answers.
+</li>
+<li> Let G be a graph and T be a minimum spanning tree of G. Suppose
+that the weight of an edge e is decreased. How can you find the minimum
+spanning tree of the modified graph. What is the runtime of your
+solution?
+</li>
+
+<li>  Let G be a graph and T be a minimum spanning tree of G. Suppose
+that the weight of an edge e that also belongs to T is increased. How can 
+you find the minimum spanning tree of the modified graph. What is the 
+runtime of your solution?
+</li>
+
+<li> Let G be a graph and T be a minimum spanning tree of G. If an edge
+e is added to G with weight w(e) to get the graph G', how can T be
+modified to T'  so that T' is a minimum spanning tree of G'. What is the
+runtime of your solution?
+</li>
+
+<li> Let G be a graph and e be a maximum weight edge on some cycle in G.
+Let G' be the graph obtained by removing the edge e from G. show that G'
+has a minimum spanning tree T' that is also a minimum spanning tree of
+G.
+</li>
+<li>  Suppose that the edge weights in a graph are all either 1 or 2.
+Can you modify Dijkstra's algorithm to run faster? If so, describe your
+approach and analyze the runtime of your approach.
+</li>
+<li>
+Generalize the above question where the edge weights are between 1 and W. 
+</li>
+</ul>
+        </div>
+
+        </section>
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+<li>A presentation that essentially presents the above material can be accessed in <a href="#"
+onClick='window.open("MST.ppt","MST","height=400,width=400")'>Slides(ppt).</a></li> 
+
+<li> <a href="#" onClick='window.open("tree.pdf","tree","height=400,width=400")'>Notes(pdf).</a></li>
+
+          </div>
+
+        </section>
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+  <footer id="lab-footer" class="default">
+    <!-- Put the content here-->
+  </footer>
+
+</div>		
+
+</body>
+</html>

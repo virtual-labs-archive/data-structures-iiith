@@ -1,0 +1,365 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" class="default">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.php">Data Structures</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+	Expression Trees
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+<p> In this experiment, we will use binary trees to represent expressions. This is
+useful to Generating code for expressions which is an important part of compilers. 
+Expression trees can also
+be used to check for correctness of expressions. Therefore, while we can evaluate expressions
+without resorting to using trees, using trees helps us in further processing of expressions.
+
+
+<p> 
+Here we will see another way of storing an expression, in the form of a tree, called the expression tree. An expression tree makes it easy to visualize the expression and evaluate it. An expression tree for an expression with only unary or binary operators is a binary tree where the leaf nodes are the operands and the internal nodes are the operators. We will also look at three types of tree traversals, which gives the three forms of writing an expression (Infix, Postfix and Prefix).
+</p>
+      </div>
+
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+
+<p>
+To generate an expression tree, given an expression, we first convert the expression to its postfix
+form.
+From the postfix expression, we read one symbol at a time from left to right. If the current symbol is an operand, then we push a tree of one node consisting of the operator onto a stack. If the symbol is an operator, then we pop two trees from the stack and create a tree with the root containing the operator and the result of the pop operations as the right and the left subtrees in that order. The resulting tree is again pushed onto the stack. When we have read all the symbols, the equivalent expression tree is the only element in the stack and a pop operation would give us the tree. The following example illustrates the algorithm.
+
+Let the postfix expression be a b + f - c d * e + /.
+
+<ul>
+<li>
+    When we first read 'a' and 'b' in that order and create two trees containing a single node 'a' and 'b' respectively.
+</li>
+
+<li>
+     These trees are then pushed on to the stack in that order.
+</li>
+
+<li>
+     When we encounter the '+' operator, we pop two trees from the stack, creating a tree with '+' as the root and the two trees as the right and the left childs respectively.
+</li>
+
+<li>
+     On reading the operand 'f', we create a tree with 'f' as a single node and push it on to the stack.
+</li>
+
+<li>
+     On reading a '-' we create the tree with '-' as the root and the two previously created trees as its children and push the new tree onto the stack.
+</li>
+
+<li>
+     Similarly, on reading 'c' and 'd', the stack has three trees; '-' and two new trees corresponding to nodes 'c' and 'd'.
+</li>
+
+<li>
+     On reading a '*', the stack has two trees; '-' and a new tree consisting of '*' as the root and 'c' and 'd' as its children.
+</li>
+
+<li>
+     Continuing further, we create the tree with '+' as the root. On reading the last '/', the final tree is created.
+</li>
+
+</div> 
+
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+         <p> At the end of this experiment, you will be able to:<br><br>
+<p> * Know how to construct expression trees
+<p> * know how to evaluate an expression using the tree.
+
+
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+	   Simulation
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+       <h2> Simulation </h2>
+	<ul>   <li>See animated binary search operations insert,delete and search 
+	<a href="#"
+	onClick='window.open("exptree.swf","ExpressionTree","height=900,width=1200")'>Expression Tree</a>
+	
+	
+	</ul>
+        </div>
+
+      </section>
+
+  
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+<li>
+<h3>Easy Questions</h3> 
+<p> What do you obtain when doing an inorder, preorder, and postorder traversal of 
+an expression tree?
+
+<p> How can you represent a binary tree in an array? For this, you should map
+each node in the binary tree to a unique position in the array. What is the 
+(maximum) size of the array required to store a binary tree of n nodes.
+ 
+
+<h3> Difficult Questions</h3>
+<p> Given an inorder traversal sequence, how many different trees can you draw that have the 
+same inorder traversal?
+
+<p> Answer the above question for preorder traversal, and separately for the postorder
+traversal.
+
+<p> How does your answer to the above question change if you are given both the inorder
+traversal and the preorder traversal? How many trees exist that has the given inorder
+traversal sequence and the given preorder traversal sequence.
+
+<p> Based on your answer to the previous question, write a program that takes as input
+an inorder traversal sequence and a preorder traversal sequence, and outputs a binary
+tree that has the given inorder and preorder traversal.
+
+
+
+</li>
+
+         </div>
+
+        </section>
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+<li>A presentation that essentially presents the above material can be accessed in <a href="#"
+onClick='window.open("slides-etree.ppt","Expressiontree","height=400,width=400")'>Slides(ppt).</a></li> 
+
+<li> <a href="#" onClick='window.open("tree.pdf","tree","height=400,width=400")'>Notes(pdf).</a></li>
+
+<h3> Tree Traversals</h3>
+<p> Another related topic is that of tree traversals.
+Tree traversal is a technique of listing the nodes in a tree. Let us restrict our attention to binary trees.Consider a recursive definition of a binary tree as having a root, a left (right) sub-binary tree whose root is the left(right) child of the root node. To list all the nodes in the tree, it is required to list the root node, all the nodes in the left subtree, and all the nodes in the right subtree. Denoting by D as the name of the root node, and by L (R) the node names in the left (right) subtree, we have the following choices.We could arrange D, L, and R in any order. Thus, there are six choices. However, if we keep the convention that nodes in R are listed only after nodes in L, then we have three choices: DLR, LDR, and RLD. The first choice is called as prefix traversal, the second as infix, and the third as the postfix traversal.<br>
+Procedure Inorder(T)<br>
+begin<br>
+if T != NULL then<br>
+begin<br>
+Inorder(T-> left);<br>
+PrintElement(T-> data);<br>
+Inorder(T-> right);<br>
+end<br>
+End.<br>
+In preorder traversal, the contents of the root are printed before its subtrees in the left and right order.<br>
+Procedure Preorder(T)<br>
+begin<br>
+if T != NULL then<br>
+begin<br>
+PrintElement(T-> data);<br>
+Preorder(T-> left);<br>
+Prorder(T-> right);<br>
+end<br>
+End.<br>
+The postorder traversal visits the left and the right subtrees first before visiting the contents of the root.<br>
+Procedure Postorder(T)<br>
+begin<br>
+if T != NULL then<br>
+begin<br>
+Postorder(T-> left);<br>
+Postorder(T-> right);<br>
+PrintElement(T-> data);<br>
+end<br>
+End.<br>
+
+Notice that the inorder, preorder, and postorder traversals of an expression tree have appropriate meanings.
+
+          </div>
+
+        </section>
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+  <footer id="lab-footer" class="default">
+    <!-- Put the content here-->
+  </footer>
+
+</div>		
+
+</body>
+</html>

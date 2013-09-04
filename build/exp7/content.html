@@ -1,0 +1,449 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" class="default">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.php">Data Structures</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+	Graph Traversals
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+<p> 
+In this experiment, we will see a fundamental problem related to graphs, Graph Traversal. It is nothing more than
+visiting every vertex of the given graph. Based on the order in which we visit the vertices, we define two different
+types of graph traversals. The order of vertices thus obtained can be useful in understanding several properties of the graph.
+<br /><br />
+
+Two main techniques : Breadth First Search (BFS), and Depth First Search (DFS).
+<br />
+      </div>
+
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+
+<h3>Breadth First Search (BFS)</h3>
+BFS is similar to level order traversal in a tree, where we visit vertices in a level by level order. We specify a starting vertex <i>S</i>
+and start visiting vertices of the graph <i>G</i> from the vertex <i>S</i>. As a general graph can have cycles, we may visit the same vertex more than once. To solve this,
+we also maintain the state of each vertex. A vertex can be in one of three states, VISITED, NOT_VISITED, IN_PROCESS.
+The basic idea of breadth first search is to find the least number of edges between <i>S</i> and any other vertex in <i>G</i>. Starting from 
+<i>S</i>, we visit vertices of distance <i>k</i> before visiting any vertex of distance <i>k+1</i>. For that purpose, 
+define <i>ds(v)</i> to be the least number of edges between <i>S</i> and <i>v</i> in <i>G</i>. So, for vertices <i>v</i> that are not reachable from 
+<i>S</i> we can have <i>ds(v)</i> = &infin;. We can use a queue to store vertices in progress.
+
+<p>
+We also a maintain <i>from[u]</i> for each of the vertex <i>u</i>, which denotes the vertex that discovered <i>u</i>. This information
+can be used to define the predecessor subgraph of <i>G</i>, which has all edges <i>(from[u],u)</i>. These edges are called as
+tree edges. For a tree edge <i>(u, v), ds(v) = ds(u) + 1</i>. All other edges are called non-tree edges and are further classified 
+as back edges and cross edges. A non-tree edge (u, v) is called as a back edge if <i>ds(v) &lt; ds(u)</i>, meaning <i>u</i> can be 
+reached from <i>S</i> via <i>v</i>, but there is yet another shortest path through path <i>u</i> can be reached from <i>S</i>.
+An edge <i>(u, v) </i> is called a cross edge if d(v) &le; d(u) + 1.
+
+
+</p>
+
+<p>
+<i>
+<b>Procedure BFS(G)</b> <br/>
+&nbsp;for each v in V(G) do<br/>
+&nbsp;&nbsp;	from[v] = NIL; state[v] = NOT_VISITED; d(v) = &infin;<br/>
+&nbsp;end-for<br/><br/>
+
+&nbsp;ds[S] = 0; state[S] = IN_PROCESS; from[s] = NIL;<br/>
+&nbsp;Q = EMPTY; Q.Enqueue(S);<br/><br/>
+
+&nbsp;While Q is not empty do<br/>
+&nbsp;&nbsp;	v = Q.Dequeue();<br/>
+&nbsp;&nbsp;	for each neighbour w of v do<br/>
+&nbsp;&nbsp;&nbsp;		if state[w] == NOT_VISITED then<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;			state[w] = IN_PROCESS; from[w] = v; ds[w] = ds[v] + 1; Q.Enqueue(w);<br/>
+&nbsp;&nbsp;&nbsp;		end-if<br/>
+&nbsp;&nbsp;		state[v] = VISITED<br/>
+&nbsp;&nbsp;	end-for<br/>
+&nbsp;end-while<br/>
+<b>End-BFS</b> <br/>
+</i>
+</p>
+
+
+<i><u>Runtime:</u></i> Each vertex enters the queue at most once and each edge is considered only once. Therefore, runtime of BFS is <i>O(m+n)</i>, 
+where <i>n</i> is the number of vertices and <i>m</i> is the number of edges in <i>G</i>.
+
+
+<br/><br/>
+
+<h3>Depth First Search (DFS)</h3>
+
+The idea of DFS is to start from a specified start vertex <i>S</i> and explore from <i>S</i> as deep as possible.
+We go from <i>S</i>, to one of its neighbors <i>x</i>, to a neighbor of <i>x</i>, and so on. We stop when there are no new 
+neighbors to explore from a given vertex. If all vertices are not visited, pick another start vertex from such vertices.
+We have to keep track of the state of a vertex and similar to BFS, a vertex can be in three states: VISITED, NOT_VISITED, IN_PROCESS.
+We also a maintain <i>from[u], d[u], f[u]</i> for each of the vertex <i>u</i>, which denotes the vertex that discovered <i>u</i>,
+the discovery time of <i>u</i> and the finish time <i>u</i>. 
+
+
+<p>
+<i>
+<b>Procedure Explore(v)</b><br/>
+&nbsp; d[v] = cur_time;<br/>
+&nbsp; cur_time = cur_time + 1;<br/>
+&nbsp;     for each neighbor w of v <br/>
+&nbsp;&nbsp;          if state(w) == NOT_VISITED then<br/>
+&nbsp;&nbsp;&nbsp;            state(w) = IN_PROCESS;<br/>
+&nbsp;&nbsp;&nbsp;             Explore(w);<br/>
+&nbsp;&nbsp;           end-if<br/>
+&nbsp;       end-for<br/>
+&nbsp;       state(v) = VISITED;<br/>
+&nbsp; f[v] = cur_time;<br/>
+&nbsp; cur_time = cur_time + 1;<br/>
+<b>End-Explore</b><br/>
+
+<br/>
+
+<b>Procedure DFS(G)</b><br/>
+&nbsp;	cur_time = 0<br/>
+&nbsp;	for v = 1 to n do<br/>
+&nbsp;&nbsp;           if state(v) == NOT_VISITED then<br/>
+&nbsp;&nbsp;&nbsp;                state(v) = IN_PROCESS;<br/>
+&nbsp;&nbsp;&nbsp;               Explore(v);<br/>
+&nbsp;&nbsp;            end-if<br/>
+&nbsp;	end-for<br/>
+<b>End-DFS</b><br/>
+
+</i>
+</p>
+
+<i><u>Runtime:</u></i> Explore() is called for each vertex exactly once and each edge is considered only once. Therefore, runtime of 
+DFS is <i>O(m+n)</i>, where <i>n</i> is the number of vertices and <i>m</i> is the number of edges in <i>G</i>.
+
+<br/><br/>
+
+<p>
+Classification of edges, based on Depth First traversal is as follows
+
+<ul>
+
+<li><u>Tree Edges</u> : All edges <i>(from[u],u)</i> are called as tree edges and define a dfs tree, a subgraph of <i>G</i>. 
+<ul><li><i>An edge (u,v)</i> is a tree edge if <i>from[v] = u</i></li></ul>
+</li>
+
+<br/>
+
+<li><u>Back Edges</u> : A non-tree edge <i>(u, v)</i> is called as a back edge if <i>v</i> is an ancestor of <i>u</i> in the dfs tree.
+<i>u</i> can be reached from <i>v</i> using tree edges, but there an edge from <i>u</i> to <i>v</i> also.
+<ul><li><i>An edge (u,v)</i> is a back edge if [d(u), f(u)]  is a subinterval of [d(v), f(v)]</li></ul>
+</li>
+
+<br/>
+
+<li><u>Forward Edges</u> : A non-tree edge <i>(u, v)</i> is called as a forward edge if <i>v</i> is a descendant of <i>u</i> in the 
+dfs tree. <i>v</i> can be reached from <i>u</i> using tree edges, but there an edge from <i>u</i> to <i>v</i> also.
+<ul><li><i>An edge (u,v)</i> is a forward edge if [d(v), f(v)] is a subinterval of [d(u), f(u)].</li></ul>
+</li>
+
+<br/>
+
+<li><u>Cross Edges</u> : Non-tree edges <i>(u, v)</i> where <i>u</i> and <i>v</i> do not share any ancestor/descendant relationship 
+are called cross edges.
+<ul><li><i>An edge (u,v)</i> is a cross edge if the two intervals [d(u), f(u)] and [d(v), f(v)] do not overlap.</li></ul>
+</li>
+
+</ul>
+
+	 
+
+</div> 
+
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+         <p> At the end of this experiment, you will be able to:<br><br>
+<p> * Perform a Breadth First Traversal on a graph
+<p> * Perform a Depth First Traversal on a graph
+<p> * Classify edges of the graph based on the traversal
+
+
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+	   Simulation
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+       <h2> Simulation </h2>
+	<ul>   <li>Study DFS and BFS in a more detailed manner.
+	<a href="#"
+	onClick='window.open("DFS_BFS.swf","ExpressionTree","height=900,width=1200")'>Graph DFS and BFS</a>
+	
+	
+	</ul>
+        </div>
+
+      </section>
+
+  
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+<ul>
+<li> Suppose that G is a directed graph with a vertex u with both a
+nonzero indegree and a nonzero outdegree. Can u end up in a DFS tree
+containing only itself?  Justify your answer.
+</li>
+<li> Take an example directed graph of about 12 vertices and 20 edges.
+Perform DFS on the graph and record the discovery and finish time of
+each vertex.
+</li>
+<li> Repeat the above question with respect to BFS. 
+</li>
+<li> Suppose that G is a directed graph and (u,v) is an edge in the
+graph. Is it true that the finish time of u is always larger than the
+finish time of v?
+</li>
+<li> Consider a directed graph G with an edge (u,v). Suppose that there
+is no path from v to u in G. Is it true that the finish time of u is
+always larger than the finish time of v?
+</li>
+<li> Consider the setting of the above question. Suppose now that C and
+C' are two subsets of vertices so that there is a path between every
+vertex in C (C') to every other vertex in C (C'), and there is an edge
+(u,v) with u in C and v in C'. Suppose also that there is no path from
+any vertex in C' to any vertex in C. Is it true that any vertex in C has
+a finish time larger than any vertex in C'? Justify your answer.
+</li>
+
+<li> Let G be an undirected graph and we apply BFS on G. Classify the
+edges of G as tree edges, back edges, forward edges, and cross edges.
+Are any of these classes empty? If so, why?
+</li>
+
+<li> Let G be an undirected graph. Use DFS on G to partition the vertices 
+of G into subsets V1, V2, ..., so that two vertices u and v are in the 
+same partition if and only if there is a path between u to v. Such
+subsets are called as the connected components of G.
+</li>
+
+<li> Let G have k connected components. How would k change if one edge
+is added to G? How would k change if one edge is removed from G.
+
+<li>
+Consider the problem of arranging the vertices of a directed acyclic
+graph so that if (u,v) is an edge in the graph then $u$
+appears before $v$ in the arragenment. Such an arrangement is called
+as a topological sorting of the graph. Design an algorithm using DFS to
+obtain a topological sort of a given directed acyclic graph. What is the
+runtime of your algorithm.
+</li>
+
+<li> Repeat the above question with using BFS instead of DFS. Is there
+any difference in the runtime? Which approach do you prefer and why?
+</li>
+
+</ul>
+
+        </div>
+
+        </section>
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+<li>A presentation that essentially presents the above material can be accessed in <a href="#"
+onClick='window.open("DFSBFS.ppt","DFS and BFS","height=400,width=400")'>Slides(ppt).</a></li> 
+
+<li> <a href="#" onClick='window.open("tree.pdf","Graphs","height=400,width=400")'>Notes(pdf).</a></li>
+
+<li> For background material on graphs, a small presentation is
+<a href="#" onClick='window.open("IntroGraphs.ppt","Graphs","height=400,width=400")'>included here(ppt).</a></li> 
+
+          </div>
+
+        </section>
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+  <footer id="lab-footer" class="default">
+    <!-- Put the content here-->
+  </footer>
+
+</div>		
+
+</body>
+</html>

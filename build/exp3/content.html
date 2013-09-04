@@ -1,0 +1,410 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" class="default">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.php">Data Structures</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+       Sorting Algorithms
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+           <p> Sorting is a fundamental task in computing. There are several sorting algorithms developed decades ago, but new algorithms continue to appear. In this experiment, the focus is to study a few classical sorting algorithms. 
+
+<p> We will primarily be using arrays for our algorithms as it is simple and illustrative to do so. we will cover merge sort, insertion sort, and quick sort in this experiment.
+      </div>
+
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+          <p>
+
+	 
+<p align="justify"><li><h3>The Array Data Structure</h3></li>
+<li>In this framework, we now see the array as a data structure. The typical operations on this data structure are as follows:</li>
+<li> &diams; to create an array data structure, called create(name, size),</li>
+<li>&diams; to access the element at a given index i, called ElementAt(index, name),</li>
+<li>&diams; to find the size of the array, called size(name), and</li>
+<li>&diams; to print the contents of the array, called print(name).</li>
+<li>While we are used to writing A[i] to access element i of an array A, it can be seen as the way to access the ith element in a non-object oriented programming language. The other operations are also not explicity specified when one uses languages such as C. But, when one considers purely object oriented languages, such operations are required to be supported. Similarly, in C, array creation is done by malloc() or a compile time declaration as int A[10];. However, when one looks at a data structure in terms of its operations, a create() operation is required.</li>
+</p>
+
+
+<ul><h3>1.Sorting</h3>
+<li>Sorting is a fundamental operation and we shall see two sorting algorithms in this section.</li>
+&nbsp;
+<h3>1.1 Merge Sort</h3>
+<li>The idea of merge sort is to shift the onus to the combine step. To this end, we come up with the following design</li>
+<li>&diams; Divide the n element input into two n/2 element sequences.</li><li>&diams; Sort the n/2 element sequences recursively.</li><li>&diams; Merge the two n/2 element sequences into a sorted n element sequence.</li><p>
+The only non straightforward operation in the above is the last step. So let us first concentrate on this
+step. The job is to merge two sorted sequences. For this, we can think of comparing elements of the two
+sorted sequences and iteratively constructively the required sorted array.
+For simplicity let us assume that elements in arrays L and R each of size l + 1 and r + 1 respectively
+are to be merged into an array A of size l + r. The elements indexed l + 1 and r + 1 are set to 1 in L and
+R respectively. The following performs the merge:</p>
+<ol start=1><li>1.Procedure Merge(L,R,A) 1. i = 1, j = 1</li><li> 2. for k = 1 to l + r do </li>
+<li> 3.if L[i] < R[j] then</li><li> 4. A[k] = L[i]; i = i + 1</li>
+<li> 5.else </li>
+<li> 6.A[k] = R[j]; j = j + 1; </li>
+<li> 7.End </li>
+</ol>
+
+<p><h3>1.2 Quick Sort</h3>
+<li>
+Let us look at one final example of sorting algorithms along with a short proof of correctness. While merge sort can be said to be optimal in terms of its time requiement, it does use some extra space. So one question to prusue is to design a sorting algorithm that can sort in-place, i.e., without using any extra space.C. A. R. Hoare gave an algorithm based on the divide and conquer strategy called the quick sort that can sort in place. The 3 steps of the algorithm in the framework of divide and conquer are:</li>
+<li>
+&diams; Divide: Divide the input into 3 parts L,E, and R where L < E < R based on a pivot.</li>
+<li>&diams; Conquer: Solve the sorting problem recursively on L and R. Assuming that all the items are distinct,we have that |E| = 1 hence already sorted.</li><li>&diams; Combine: Produce the sorted L, E, and R in that order.</li>
+One can notice that the third step is quite trivial here. In fact, this is an example of the so called partition based algorithms. Let us look at the only non-trivial step, that of partitioning the input.
+The key to the partition step is to select a pivot and rearrange the elements of the array. For this the
+following approach is presented.<li>1. Procedure Parition(A, l, h)</li>
+<li>2. pivot = A[h];</li>
+<li>3. i = l - 1; 4. for j = p to h - 1 do</li>
+<li>5. if A[j] &#60;&#61; pivot</li>
+<li>6. i = i + 1;</li>
+<li>7. swap A[i] with A[j]</li>
+<li>8. swap A[i + 1] with A[h]</li>
+<li>9. End Procedure</P>   </li>
+   
+</ul>
+</div> </p>
+
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+         <p> At the end of this experiment, you will be able to:
+<p> * Understand various sorting algorithms using arrays
+<p> * Know how to implement them in a standard programming language
+<p> * See which algorithm is better in what settings.
+
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+	   Simulation
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+         <ul>
+   See how various sorting algorithms work with various inputs, including best case, worst case, and average inputs.<li>  <a href="#" onClick='window.open("quick.swf","Sorting Algorithms","height=800,width=800")'>Quick sort</a></li>
+   <li><a href="#" onClick='window.open("merge.swf","Sorting Algorithms","height=800,width=800")'>Merge Sort</a></li><li>
+   <a href="#" onClick='window.open("insertion.swf","Sorting Algorithms","height=800,width=800")'>Insertion Sort</a></li>
+
+</ul>
+        </div>
+
+      </section>
+
+  
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+            
+         <li><h3>Easy Questions</h3> 
+<p>Answer the following questions with respect to sorting algorithms on arrays. 
+
+<ul>
+<li> <p>1. Are there sorting algorithms that take the same asymptotic runtime irrespective of the input? 
+<li> <p> 2. Most of the algorithms we studied so far made no assumptions on the maximum input values in the input. When some bounds on the input values are known, it is possible to design sorting algorithms that benefit from this knowledge. A simple example is the following: Let A be a set of n numbers whose values are between 1 to O(n). Now, to sort A, declare an array B of size max A[i]. Mark B[i] as 1 iff A[j] = i. Now, print i if B[i] =1 in increasing order of i.  Can you modify this scheme when the maximum number in A in more than O(n), say in O(n^2), while still using only |A| space?
+<li>3. An inversion is a pair of indices $i$ and
+$j$ so that $A[i]$  more than A[j]$ but $i$ is less than j$, i.e., elements are not in the
+natural(sorted) order. Design an algorithm based on sorting algorithms to count the number of inversions in a given array A of n numbers.
+</ul>
+
+<ul>
+&nbsp;
+<li><h3>Difficult Questions</h3></li>
+
+<p> Notice that for merge sort to work, one does not need to know the
+entire data at once. Consider settings where the entire data may not
+it into the memory of a computer system. In that case, one can bring
+in as much data as it is possible to work with, sort in piece and then
+write back the sorted piece, and bring fresh unsorted data in to the
+memory. 
+
+<p> Once all data is sorted in pieces, these pieces can be then merged in a
+similar fashion. 
+
+<p> This process is called as "external sorting'' as we imagine that the
+data is available externally to the computer. Merge sort is one such
+sorting algorithm that extends naturally to an external setting.
+
+<p> Problem: Develop the idea of external sorting using merge sort.
+Describe the nature of data movements that are to be used in your
+scheme. 
+
+<p> Problem: Why would insertion sort not work in an external setting?
+
+<p> Since it is clear that merge sort can work with only partial data, it
+may be possible to think of a parallel version of merge sort. One can
+view a parallel algorithm as follows. An algorithm is a sequence of
+tasks $T1_, T_2, \cdots$. These tasks may have inter-dependecies, so
+that task $T_i$ should be completed before task $T_j$ for some $i,j$.
+However, it is often the case that there are several algorithms where
+many tasks are independent of each other. (In some cases, the algorithm
+or the computation has to be expressed in that indepedent-task
+fashion). In such a setting, one can imagine that tasks that are
+indepedent of each other can be done simultaneously, or in parallel.
+
+<p>Consider such parallel execution and the problem of sorting a given set
+of numbers. When using merge sort, we divide the input into two parts.
+These two tasks -- of sorting each part -- are independent of each
+other and hence can be done in parallel. So let us investigate this
+possibility further. We have to also merge sorted sequences. The way we
+have described merge sort, when merging two sequences of length $\ell$
+each, we have $2\ell$ tasks. These $2\ell$ tasks find the position of
+each element in the two merged seuqences in the combined sequence of
+$2\ell$ elements. These $2\ell$ tasks are also completely dependent in
+the way they are written. However, a rewrite is possible. 
+
+<p>Let us call the two sorted sequences as $A$ and $B$. Think of searching
+for each element of $A$ in $B$ and vice-versa. Since the sequences $A$
+and $B$ are sorted, one can use binary search. Still there are $2\ell$
+tasks but these $2\ell$ tasks are independent of each other. Once these
+tasks finish, one can see that element $A[i]$ from $A$ can be placed at
+index $i'$ where $i'= i + Rank(A[i], B)$. In the former expression,
+$Rank(A[i], B)$ refers to the rank of element $A[i]$ in the array $B$
+obtained using binary search. 
+
+<p>There are several enhancements to the above idea of a simple parallel
+merge sort. An interested reader can find more details in the book ''An
+Introduction to Parallel Algorithms'', by J. JaJa.
+
+ 
+
+</ul>
+
+          </div>
+
+        </section>
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+            
+<p><li>
+ Unlike insertion sort which has a runtime of $O(n^2)$, merge sort can
+ be seen to have a runtime of $O(n\log n)$. What helped in this case?
+
+ The big contributing factor is that in insertion sort, one can move an
+ element by only one position (left or right) at a time. Consdier an
+ element $x$ at index $i$, and $x$ has to be moved to index $j$ in sorted
+ order. Let  $|i-j| = k$. In each iteration of insertion sort, $x$ can
+ be moved only by one position. So, it takes $k$ moves for $x$ to be in
+ its right position. Notice that $k = \Theta(n)$, where $n$ is the size
+ of the input. Further, there can be $\Theta(n)$ elements with the
+ property that $k = \Theta(n)$. So, the overall runtime of insertion
+ sort is $O(n^2)$. 
+
+ In  merge sort however, an element can be moved by a distance as large
+ as $n/2$. In essence, an element can jump more than one cell at a time,
+ and hence the overall runtime does reduce. 
+
+ A further insight is that irrespective of the input, merge sort always
+ has a runtime of $O(n\log n)$. Notice that in each stage of the merge
+ sort, input is divided into two halves, each half is sorted, and the
+ sorted halves are merged. During the merge process, it is not
+ considered whether the input is already in sorted order or not. So, the
+ merge process proceedes oblivious to the input. On the other hand,
+ insertion sort can benefit on certain inputs. In fact, the number of
+ swaps that occur in an insertion sort is equal to the number of
+ inversions in the input data. An inversion is a pair of indices $i$ and
+ $j$ so that $A[i] > A[j]$ but i is less than j, i.e., elements are not in the
+natural(sorted) order. For each such inversion pair, insertion sort has
+to perform one swap. 
+</li></p>
+
+<br>
+<br>
+
+    <li>A PDF notes describing the array as a data structure, along with the various sorting algorithms  can be read in the attached <a href="#" onClick='window.open("week3.pdf","week3.pdf","height=400,width=800")'>PDF.</a></li>
+    <li>A presentation that essentially presents the above material can be accessed in <a href="#" onClick='window.open("slides-week3.ppt","slides-week3.ppt","height=400,width=400")'>PPT.</a></li>
+          </div>
+
+        </section>
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+  <footer id="lab-footer" class="default">
+    <!-- Put the content here-->
+  </footer>
+
+</div>		
+
+</body>
+</html>

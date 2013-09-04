@@ -1,0 +1,405 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" class="default">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.php">Data Structures</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+	Search Trees
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+          
+<p> In this experiment, you will use binary trees to support dictionary operations
+such as Insert(), Delete(), Find(). This data structure is called a binary search
+tree. 
+A binary search tree is a binary tree with the restriction that the value at any
+node is bigger than the values of all the items in the left subtree and is smaller
+than the values of all the elements in the right subtree. 
+</p>
+      </div>
+
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+<h2> Motivation </h2> 
+Data structures supporting dictionary operations, primarily
+insert(), delete(), and find(), play an important role. To support
+dictionary operations, one can use a hash table. But a hash table
+can only support these operations on O(1) average time. The worst
+case time could be very high. 
+
+<p> When using binary search trees, one can support all these
+operations in O(log n) time, in most cases. Moreover, a hash table
+cannot be used to support extended dictionary operations such as
+findMin() and findMax(). A binary tree can support these
+operations also efficiently. 
+</div> 
+
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+         <p> At the end of this experiment, you will be able to:<br><br>
+<p> * use trees for hierachial data .
+<p> * Know trees applications and its importance.
+<p> * know search trees efficient operations like insert,delete and find.
+
+
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+	   Simulation
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+       <h2> Simulation </h2>
+	<ul>   <li>See animated binary search operations insert,delete and search 
+	<a href="#"
+	onClick='window.open("binarySearchTree.swf","binarySearchTree","height=900,width=1200")'>Search Tree</a>
+	
+	
+	</ul>
+        </div>
+
+      </section>
+
+  
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+            
+         
+<h3> Easy Problems</h3>
+
+<p> Modify the operation delete in a binary search tree so that
+the maximum node in the right subtree is used as the replacement
+node. 
+
+<p> What is the maximum height of a binary search tree on n nodes.
+What is the minimum height of a binary search tree on n nodes.
+
+<p> What is the maximum height of a binary search tree if every
+internal node at level l have both their children before any node
+at level l+1 has some children. 
+
+<h3> Difficult Problems</h3>
+<p> Many problems do not require the full repertoire of dictionary
+operations but only a subset. Consdier the subset of operations:
+insert(), and DeleteMin(). In this case, it is not required to
+have a binary search tree and we can think of ways to support
+these two oeprations efficiently. Here is a possible way. 
+
+<p>Use the binary tree described in the third question above. Use the
+invariant that the value at any node is at most the value of both
+of its children. In this data structure, where is the minimum
+element? 
+
+<p>Suppose you add one more element to the existing tree above. Where
+should you first place it? How do you repair the invaraint if
+required? What is the runtime of this operation?
+
+<p> Extend your solution above to also the DeleteMin() operation.
+What is the runtime of your operation?
+
+<p> How can you use your above data structure to sort n data
+items. What is the runtime of your solution?
+<!--
+<p>&#149;&nbsp;AVL TressA binary search tree satisfying the search invariant, and the height invariant
+is called an AVL tree. These are named after after its inventors, Adelson Velskii and Landis.
+An insertion/removal can violate the height invariant and  how to maintain the invariant after an insert/remove.
+<p>&#149;&nbsp;B+ tree : Instead of a binary tree, imagine a k-ary search tree.The k subtrees of a node shall be k-ary trees so that the values in tree Ti are between Ti-1 and Ti+1.Generalizes a binary search tree.
+<p>&#149;&nbsp;In a splay tree, during every operation, including a search(), the current (serach) tree is modified.The item searched is made as the root of the tree.During this process, other nodes also change their height.
+-->
+
+</li>
+         </div>
+
+        </section>
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+<li>A presentation that essentially presents the above material can be accessed in <a href="#" onClick='window.open("Searchtree.ppt","Searchtree","height=400,width=400")'>Trees.ppt.</a></li> 
+
+<li> <a href="#" onClick='window.open("tree.pdf","tree","height=400,width=400")'>Trees.pdf.</a></li>
+
+
+&nbsp;
+<li>
+<div id="readMore">
+The material above is breifly discussed below.
+
+<h3> Binary Tree</h3>
+<p> The implementation of binary trees is considerably easier compared to general trees as every node has at most two children. Following is an example declaration of a tree node.<br>
+
+struct node<br>
+{<br>
+int data;<br>
+struct node *left;<br>
+struct node *right;<br>
+}<br><br>
+
+Binary tree have lot of its applications such as searching and compilers via expression trees.</p><br>
+
+<h3> Binary Search Trees</h3>
+
+<p>Another important application of binary trees is to searching. A binary tree with the restriction that the value at any node is bigger than the values of all the items in the left subtree and is smaller than the values of all the elements in the right subtree.A binary tree which satisfies the above restriction is called a binary search tree.To illustrate it, consider designing a data structure for primarily three operations: insert, delete, and search. We saw that a hash table can only give average O(1) performance. Here, we will see how to get worst case O(log n) performance.<br><br>
+
+<b>Find(x) :</b> <br><br>
+
+This operations takes as input an element x and returns a pointer to the node containing data item x in the tree T if x is present in T or returns NULL otherwise. Given the arrangement of data in a binary search tree T. Let us compare the value at the root of T with x. There are three possible cases. If the value at T equals x, then the search is successful and we can return a pointer to the root of T. Otherwise, if the value at the root is larger than x, then x can be present only in the left subtree of the root. So we can limit our search to the left subtree, which is also a binary search tree by definition. Similarly, if the value at the root is smaller than x, then we can limit our search to the right subtree of x. If during these recursive calls, we reach a leaf node which is not equal to x, then we can declare the search as unsuccessful.<br>
+The following pseudocode illustrates the procedure.<br><br>
+Procedure Find(x, T)<br>
+begin<br>
+if T is NULL then return NULL;<br>
+else if T-> data = x then return T;<br>
+else if T-> data < x then return Find(x, T-> left);<br>
+else if T-> data > x then return Find(x, T-> right);<br>
+end End.<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;Notice that in either a successful or unsuccessful search, we traverse only one path from the root. A successful search may stop at some interior node but an unsuccessful search can only stop at a leaf node. This observation allows us to argue that the time taken for the search operation is in the worst case bounded by the depth of the tree T. Even though we implemented the procedure recursively,the same can be written by simply using loops instead of recursion. Also, notice the similarity and differences to binary search.<br>
+
+<br>
+<b>Insert : </b><br><br>
+
+To simplify the description, let us assume that duplicates are not part of the input. The
+procedure to insert a new node into an existing binary tree is similar to that of the Find operation.Starting from the root node, we insert the new new node in the right (left) subtree of the root if the value of the node is larger (smaller) than the value at the root. This comparison is continued till we reach a leaf node l. We insert the new node as a left child of l if l->data > x and as a right child otherwise.If the tree is presently empty, then in this case, we simply create a new binary search tree with the new node as the root.<br>
+
+The pseudocode for the above operation is given here.<br><br>
+Procedure Insert(T, x)<br>
+begin<br>
+T' = T;<br>
+if T' =NULL then<br>
+T' = new Node(x, Null, Null);<br>
+else<br>
+while T' is not a leaf node do<br>
+if T'-> data < x then T' = T'-> left;<br>
+else T' = T'-> right;<br>
+end-while;<br>
+if T'-> data < x then<br>
+Add x as a right child of T';<br>
+else<br>
+Add x as a left child of T';<br>
+End-if<br>
+End-if<br>
+End.<br><br>
+
+<b>Remove : </b><br><br>
+Finally, the remove operation. Difficult when compared to insert because new node inserted always as a leaf node but deletion can also be non-leaf node.We will consider several cases<br>
+&nbsp;&#149;when x is a leaf node <br>
+&nbsp;&#149;when x has only one child <br>
+&nbsp;&#149;when x has both children <br>
+<br>
+&#149;If x is a leaf node, then x can be removed easily.<br>
+parent(x) misses a child.<br>
+<br>
+&#149;Suppose x has only one child, say right child.Say, x is a left child of its parent.Notice that x < parent(x) and child(x) > x, and also child(x) < parent(x).So, child(x) can be a left child of parent(x), instead of x.In essence, promote child(x) as a child of parent(x).<br>
+<br>
+&#149;x has both children.Cannot promote any one child of x to be child of parent(x).But, what is a good value to replace x?Notice that, the replacement should satisfy the search invariant.
+So, the replacement node should have a value more than all the left subtree nodes and smaller than all right subtree nodes.One possibility is to consider the maximum valued node in the left subtree of x.Equivalently, can also consider the node with the minimum value in the right subtree of x.Notice that both these replacement nodes are leaf nodes. Hence easy to remove them.
+In a way, to remove x, we physically remove a leaf node.<br><br>
+Procedure Delete(x, T)<br>
+begin<br>
+	if T = NULL then return NULL;<br>
+	T' = Find(x);<br>
+	if T' has only one child then<br>
+		adjust the parent of the remaining child;<br>
+	else<br>
+		T'' = FindMin(T'-> right);<br>
+		Remove T'' from the tree;<br>
+		T'-> value = T''-> value;<br>
+	End-if<br>
+End.<br><br>
+
+
+</p>
+          </div>
+
+        </section>
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+  <footer id="lab-footer" class="default">
+    <!-- Put the content here-->
+  </footer>
+
+</div>		
+
+</body>
+</html>
