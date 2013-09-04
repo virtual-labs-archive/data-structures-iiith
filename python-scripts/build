@@ -4,9 +4,12 @@
 ## if inst_i==0 than instruction is successful else not
  
 import os
-inst_1=os.chdir("../src")
+# Change Directory to source - src
+inst_1=os.chdir("/root/cse01/src")
+# Make src
 inst_2=os.system("make all")
 inst_3=os.system("cd ..")
+# Copy files to web folder
 inst_4=os.system("cp -r ../build/ /var/www/")
 inst_5=os.system("chmod 777 /var/www/build/ -R")
 
