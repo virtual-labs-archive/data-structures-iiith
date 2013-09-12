@@ -1,0 +1,22 @@
+#!/bin/bash
+# installation script for Sage 
+
+# The script automates the steps followed to install Sage. The script is invoked by initialize script.  
+
+# change directory 
+cd ../sage-source/ 
+
+# unpack the tar file
+tar -xvf sage-5.6.tar
+
+# change the directory name
+mv sage-5.6 /root/sage
+
+# change DIR to home
+cd
+# Change to sage
+cd sage
+# run the make file
+make
+
+

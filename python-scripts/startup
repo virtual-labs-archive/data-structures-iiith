@@ -2,11 +2,16 @@
 ## Build script
 ## inst_i denotes ith instruction
 ## if inst_i==0 than instruction is successful else not
-
-# Apache Server Start 
-import os
-inst_1=os.system("service apache2 start")
-
+## 
+## Sage Server Start 
+## Screen is used to keep server running
+import os,time
+## Detach sage server after start
+print "****************************************"
+print "Press CTRL-a + d after server is started" 
+print "****************************************"
+time.sleep(4)
+inst_1=os.system("./start_sage")
 if(inst_1==0):
 	print "****************"
 	print "Start Successful"

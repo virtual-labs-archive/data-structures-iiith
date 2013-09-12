@@ -3,15 +3,17 @@
 ## inst_i denotes ith instruction
 ## if inst_i==0 than instruction is successful else not
 
-# Apache Server Stop  
-import os
-inst_1=os.system("service apache2 stop")
+# Sage Server Stop 
+import os 
+def stop_server():
+	try:
+        # if sage notebook server is running, "twist.pid" is created
+ 	       file = open(os.environ['HOME'] + '/.sage/sage_notebook.sagenb/sagenb.pid', 'r')
+	       pid = file.readline()
+               file.close()
+               print "Stopping sage server..."
+               os.system('kill -INT ' + pid)
+      	except IOError:
+               print "No sage server running." 
 
-if(inst_1==0):
-	print "********************"
-	print "Shutdown Successful"
-	print "********************"
-else:
-	print "*********************"
-	print "Shutdown Unsuccessful"
-	print "*********************"
+stop_server()
