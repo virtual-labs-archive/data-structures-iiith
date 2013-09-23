@@ -1,6 +1,0 @@
-make
-m4
-build-essential
-gcc
-gfortran
-libssl-dev

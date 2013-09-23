@@ -1,5 +1,0 @@
-#!/bin/bash
-# Creating Sage notebook
-cd
-cd sage
-screen -S "Sage_Server" ./sage -c 'notebook(interface="",directory="/root/.sage/sage_notebook.sagenb",port=80,accounts=true)'
