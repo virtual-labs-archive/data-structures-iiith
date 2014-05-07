@@ -83,8 +83,8 @@
                     "backup": [
                     ], 
                     "clean": [], 
-                    "init": [
-                        "cp -r build/ /var/www/",
+                    "init": ["mv /var/www/index.html index.html.default",
+                        "cp -r ../build/* /var/www/",
                         "chmod 775 /var/www/build/ -R"
                     ], 
                     "pause": [], 
