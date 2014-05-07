@@ -21,13 +21,13 @@
                 {
                     "contact": {
                         "alternate_email": "", 
-                        "email": "sujata.agashe@yahoo.com", 
+                        "email": "kkishore@iiit.ac.in", 
                         "mobile_number": "", 
                         "office_number": ""
                     }, 
                     "department": "", 
-                    "institute": "COE Pune", 
-                    "name": "Sujatha Agashe", 
+                    "institute": "IIIT Hyderabad", 
+                    "name": "Kishore Kothapalli", 
                     "organization": "", 
                     "role": "Lab Developer", 
                     "title": "", 
@@ -36,13 +36,28 @@
                 {
                     "contact": {
                         "alternate_email": "", 
-                        "email": "laxmikantpk@gmail.com", 
+                        "email": "dipsankar.banerjee@research.iiit.ac.in", 
                         "mobile_number": "", 
                         "office_number": ""
                     }, 
                     "department": "", 
-                    "institute": "COE Pune", 
-                    "name": "Laxmikant Kumbhare", 
+                    "institute": "IIIT Hyderabad", 
+                    "name": "Dip Sankar Banerjee", 
+                    "organization": "", 
+                    "role": "Lab RA", 
+                    "title": "", 
+                    "web": ""
+                }, 
+                {
+                    "contact": {
+                        "alternate_email": "", 
+                        "email": "anilkishore@research.iiit.ac.in", 
+                        "mobile_number": "", 
+                        "office_number": ""
+                    }, 
+                    "department": "", 
+                    "institute": "IIIT Hyderabad", 
+                    "name": "Anil Kishore", 
                     "organization": "", 
                     "role": "Lab RA", 
                     "title": "", 
@@ -50,15 +65,15 @@
                 }
             ], 
             "discipline": [
-                "Electrical Engineering"
+                "Computer Science & Engineering"
             ], 
-            "id": "eee09", 
+            "id": "cse01", 
             "integration_level": 5, 
-            "name": "Industrial Automation Laboratory", 
+            "name": "Data Structures", 
             "server-side": true, 
             "status": "Released", 
-            "type": "Simulation"
-        }, 
+            "type": ""
+        },  
         "runtime_requirements": {
             "platform": {
                 "arch": "i386", 
