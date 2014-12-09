@@ -210,6 +210,7 @@ Let the postfix expression be a b + f - c d * e + /.
         class="heading">
 	   Simulation
         </div>
+	<p><a href="../documents/flash-plugin.pdf">Install prerequisites to run the simulation</a></p>
 
         <div id="experiment-article-section-4-content" 
         class="content">
