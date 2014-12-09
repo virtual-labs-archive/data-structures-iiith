@@ -254,7 +254,6 @@ minimum spanning trees.
         <div id="experiment-article-section-4-content" 
         class="content">
        <h2> Simulation </h2>
-	<p><a href="../documents/flash-plugin.docx">Install prerequisites to run the simulation</a></p>
 	<ul>   <li>The simulation shows how to construct a MST using Kruskal's algorithm. </li>
 	<a href="#"
 	onClick='window.open("MinimumSpanningTree.html","ExpressionTree","height=900,width=1200")'>Minimum Spanning Tree in a Graph</a>
