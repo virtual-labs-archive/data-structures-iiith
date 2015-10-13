@@ -115,7 +115,7 @@ Data Structures
 							<!--edit -->
 <h1 class="text-h2-lightblue">Graph Traversals</h1><div class="content" id="experiment-article-section-2-content">
 <h3>Breadth First Search (BFS)</h3>
-BFS is similar to level order traversal in a tree, where we visit vertices in a level by level order. We specify a starting vertex <i>S</i>
+<p>BFS is similar to level order traversal in a tree, where we visit vertices in a level by level order. We specify a starting vertex <i>S</i>
 and start visiting vertices of the graph <i>G</i> from the vertex <i>S</i>. As a general graph can have cycles, we may visit the same vertex more than once. To solve this,
 we also maintain the state of each vertex. A vertex can be in one of three states, VISITED, NOT_VISITED, IN_PROCESS.
 The basic idea of breadth first search is to find the least number of edges between <i>S</i> and any other vertex in <i>G</i>. Starting from 
@@ -155,13 +155,14 @@ An edge <i>(u, v) </i> is called a cross edge if d(v) ≤ d(u) + 1.
 <b>End-BFS</b> <br/>
 </i>
 </p>
+<p>
 <i><u>Runtime:</u></i> Each vertex enters the queue at most once and each edge is considered only once. Therefore, runtime of BFS is <i>O(m+n)</i>, 
 where <i>n</i> is the number of vertices and <i>m</i> is the number of edges in <i>G</i>.
 
 
 <br/><br/>
 <h3>Depth First Search (DFS)</h3>
-
+<p>
 The idea of DFS is to start from a specified start vertex <i>S</i> and explore from <i>S</i> as deep as possible.
 We go from <i>S</i>, to one of its neighbors <i>x</i>, to a neighbor of <i>x</i>, and so on. We stop when there are no new 
 neighbors to explore from a given vertex. If all vertices are not visited, pick another start vertex from such vertices.
