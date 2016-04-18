@@ -1,0 +1,33 @@
+* Author: Nihanth
+* Date Created: 15 Apr 2016
+* Environment
+  - OS: Windows 7, Linux
+  - Browsers: Firefox,Chrome
+  - Bandwidth : 100Mbps
+  - Hardware Configuration:8GBRAM , 
+  - Processor:i5
+  - Data : 1,3 5
+
+* Objective
+  - To view the  Simulation of the Search Trees experiment
+
+* Pre conditions
+  - Refer to first test case [[https://github.com/Virtual-Labs/data-structures-iiith/blob/master/test-cases/integration_test-cases/Search Trees/Search Trees_01_Usability_smk.org][Search Trees_01_Usability_smk.org]]
+
+* Post conditions
+  - Nil
+* Test Steps
+  1. Click on the  Simulation link 
+  2. Check if there are any distortions and junk characters in the  Simulation page
+  3. Click on the  Search Tree link
+  4. Don't enter a value and click on Delete button
+
+* Expected result
+  1. Simulation page should be opened
+  2. Content should be present with no distortions and Junk characters
+  3. A new tab should be opened with the simulation process
+  4. An error message should be displayed on the screen to enter the values and then click on the delete button
+
+* Review/comments
+
+

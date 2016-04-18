@@ -1,0 +1,35 @@
+* Author: Nihanth
+* Date Created: 15 Apr 2016
+* Environment
+  - OS: Windows 7, Linux
+  - Browsers: Firefox,Chrome
+  - Bandwidth : 100Mbps
+  - Hardware Configuration:8GBRAM , 
+  - Processor:i5
+
+* Objective
+  - To  simulate the Minimum Spanning Trees experiment
+
+* Pre conditions
+  - Refer to first test case [[https://github.com/Virtual-Labs/data-structures-iiith/blob/master/test-cases/integration_test-cases/Expression Eval/Expression Eval_01_Usability_smk.org][Expression Eval_01_Usability_smk.org]]
+
+* Post conditions
+  - Nil
+* Test Steps
+  1. Click on the  Simulation link 
+  2. Check if there are any distortions and junk characters in the  Simulation page
+  3. Click on the Expression Evaluation link
+  4. Click on the clear(C) button and enr-ter the valid values and click on "=" button
+  5. Click on pause button and click on previous button 
+  6. click on play button and the click on the clear(C) button
+
+* Expected result
+  1. Simulation page should be opened
+  2. Content should be present with no distortions and Junk characters
+  3. A new tab should be opened with the simulation process
+  4. The result should be displayed on the screen and when we click on the pause button , video should stop playing and when we click on the previous button the previous video should start playing 
+  5. When we click on the clear board button , the video should stop playing and simulation home page should be displayed on the screen
+
+* Review/comments
+
+
