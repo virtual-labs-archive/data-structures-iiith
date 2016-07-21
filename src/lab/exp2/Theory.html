@@ -116,8 +116,8 @@ Data Structures
 <h1 class="text-h2-lightblue">Expression Evaluation</h1><div class="content" id="experiment-article-section-2-content">
 <p>
 <h3>1.1 The Stack Data Structure</h3>
-<br><br>
-<li>
+<ul>
+<li> 
 The stack data structure is characterized by its last-in-first-out
 access mechanism. Thus, the element that is added most recently will
 be the element that is removed first on a remove call. Such an order
@@ -139,11 +139,11 @@ recently.</li>
  empty stack.</li><li>  push(element) : Pushes the item element to the
  top of the stack.</li><li>pop() : Returns the item that is most
  recently pushed.</li><li> size() : Return the size of the
- stack.</li> </li></p>
+ stack.</li> </li></ul></p>
 <p><h3>1.2 Applications of Stacks</h3>
 <h4>1.2.1 Expression Evaluation</h4>
 <br>
-<li> One of the prominent
+<ul><li> One of the prominent
 applications of stacks is to expression evaluation. Consider a table
 calculator which evaluates arithemetic expressions involving addition,
 multiplication, subtraction, and division. For example,2+3 * 5 - 7 is
@@ -163,20 +163,22 @@ the operators are written after the operands. The postfix equivalent
 way of writing the above expression would be 3 5* 2 + 7 -. It turns
 out that the postfix and prefix notations are free of ambiguity. We
 will how that is the case first and then see how to convert a given
-expression in the infix form to its prefix form.</li>
+expression in the infix form to its prefix form.</li> </ul>
 <br>
 <h4>1.2.2 Evaluating a Postfix Expression</h4>
 <br>
+<ul>
 <li>
 Consider an expression given in the postifix notation. We now see how to evaluate such an expression.
-For example, ab * c + is a postifix expression. Since the operators follow the operands, it is intuitive to see if the previously available two operands are the corresponding operands for a given operator. This intuition serves well and is correct.So, when processing a postfix expression from left to right, when we encounter an operator, we have to apply the operation to the two most recent operands. This suggests that the operands should be placed on a stack.	   </li> </li>
+For example, ab * c + is a postifix expression. Since the operators follow the operands, it is intuitive to see if the previously available two operands are the corresponding operands for a given operator. This intuition serves well and is correct.So, when processing a postfix expression from left to right, when we encounter an operator, we have to apply the operation to the two most recent operands. This suggests that the operands should be placed on a stack.	   </li> </li></ul>
 </p>
 <p>
 <h3> 2.1 The Queue Data Structure </h3>
 <br>
+<ul>
 <li>
 In the previous section, we have seen a new way of access model to the array can result in good solutions to important applications. A queue is another such data strucure which supports operations such as insert
-and delete. One can think of analogies to several situations such as a queue at a ticket reservation office, an operating system job queue, or a queue of aeroplanes ready to take off. In all such settings, the element or the object that is first inserted is the first one to come out of the queue also. Thus, the queue is a First-In- First-Out (FIFO) data structure. This suggests that there are two quantities associated with a queue, the front and the rear. The rear indicates the position where the new elements would be added. The front indicates the position from where elements can be deleted from the queue.Formally, a queue is a data structure which supports the following operations.</li><li>&amp; insert: Insert an element to the rear of the queue</li><li>delete: Delete an element from the front of the queue.</li><li>size: Return the size of the queue</li>
+and delete. One can think of analogies to several situations such as a queue at a ticket reservation office, an operating system job queue, or a queue of aeroplanes ready to take off. In all such settings, the element or the object that is first inserted is the first one to come out of the queue also. Thus, the queue is a First-In- First-Out (FIFO) data structure. This suggests that there are two quantities associated with a queue, the front and the rear. The rear indicates the position where the new elements would be added. The front indicates the position from where elements can be deleted from the queue.Formally, a queue is a data structure which supports the following operations.</li><li>&amp; insert: Insert an element to the rear of the queue</li><li>delete: Delete an element from the front of the queue.</li><li>size: Return the size of the queue</li></ul>
 </p></div>						</div>
 					</div>
 			</div>
