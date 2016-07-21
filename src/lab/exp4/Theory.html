@@ -115,8 +115,8 @@ Data Structures
 							<!--edit -->
 <h1 class="text-h2-lightblue">Polynomial Operations</h1><div class="content" id="experiment-article-section-2-content">
 <p>
-<p align="justify"><li><h3>The Array Data Structure</h3></li>
-<li>In this framework, we now see the array as a data structure. The typical operations on this data structure are as follows:</li>
+<p align="justify"><ul> <li><h3>The Array Data Structure</h3></li></ul>
+<ul><li>In this framework, we now see the array as a data structure. The typical operations on this data structure are as follows:</li>
 <pre>
 ♦ to create an array data structure, called create(name, size),</li>
 ♦ to access the element at a given index i, called ElementAt(index, name),</li>
@@ -126,13 +126,14 @@ Data Structures
 </li>
 <li>While we are used to writing A[i] to access element i of an array A, it can be seen as the way to access the ith element in a non-object oriented programming language. The other operations are also not explicity specified when one uses languages such as C. But, when one considers purely object oriented languages, such operations are required to be supported. Similarly, in C, array creation is done by malloc() or a compile time declaration as int A[10];. However, when one looks at a data structure in terms of its operations, a create() operation is required.</li>
 </p>
-</p> Linked lists are useful to study for two reasons. Most obviously, linked lists are a data structure which you may want to use in real programs. Seeing the strengths and weaknesses of linked lists will give you an appreciation of the some of the time, space, and code issues which are useful to thinking about any data structures in general.Somewhat less obviously, linked lists are great way to learn about pointers. In fact, you may never 
-use a linked list in a real program, but you are certain to use lots of pointers. Linked list problems are a nice combination of algorithms and pointer manipulation. Traditionally, linked lists have been the domain where beginning programmers get the practice to really understand pointers.
+</p> Linked lists are useful to study for two reasons. <br> <ol> <li> Most obviously, linked lists are a data structure which you may want to use in real programs. Seeing the strengths and weaknesses of linked lists will give you an appreciation of the some of the time, space, and code issues which are useful to thinking about any data structures in general.</li> <br> <li> Somewhat less obviously, linked lists are great way to learn about pointers. In fact, you may never 
+use a linked list in a real program, but you are certain to use lots of pointers. Linked list problems are a nice combination of algorithms and pointer manipulation. Traditionally, linked lists have been the domain where beginning programmers get the practice to really understand pointers. </li> </ol>
 <h2>Application of linked lists is to polynomials</h2>
-We now use linked lists to perform operations on polynomials. Let f(x) = Σ<sup>d</sup><sub>i=0</sub> a<sub>i</sub>x<sup>i</sup>. The quantity d is called as the degree of the polynomial, with the assumption that a<sub>d</sub> not equal to 0. A polynomial of degree d may however have missing terms  i.e., powers j such that 0 &lt;= j &lt; d and a<sub>j</sub> = 0.The standard operations on a polynomial are addition and multiplication. If we store the coefficient ofeach term of the polynomials in an array of size d + 1, then these operations can be supported in a straightforwardway. However, for sparse polynomails, i.e., polynomials where there are few non-zero coefficients,this is not efficient.
+
+We now use linked lists to perform operations on polynomials. <br>Let f(x) = Σ<sup>d</sup><sub>i=0</sub> a<sub>i</sub>x<sup>i</sup>. <br> The quantity d is called as the degree of the polynomial, with the assumption that a<sub>d</sub> not equal to 0. A polynomial of degree d may however have missing terms  i.e., powers j such that 0 &lt;= j &lt; d and a<sub>j</sub> = 0. <br> The standard operations on a polynomial are addition and multiplication. If we store the coefficient ofeach term of the polynomials in an array of size d + 1, then these operations can be supported in a straightforwardway. However, for sparse polynomails, i.e., polynomials where there are few non-zero coefficients, this is not efficient.
 One possible solution is to use linked lists to store degree, coefficient pairs for non-zero coefficients.With this representation, it makes it easier if we keep the list of such pairs in decreasing order of degrees.
 <li>A polynomial is a sum of terms.Each term consists of a coefficient and a (common) variable raised to an exponent. We consider only integer exponents, for now.<br>
-Example: 4x<sup>3</sup> + 5x  10.<br>How to represent a polynomial?Issues in representation,should not waste space,should be easy to use it for operating on polynomials.Any case, we need to store the coefficient and the exponent.<br>
+Example: 4x<sup>3</sup> + 5x  10.<br>How to represent a polynomial?  Issues in representation, should not waste space, should be easy to use it for operating on polynomials. Any case, we need to store the coefficient and the exponent.<br>
 
 
 struct node <br>
@@ -143,10 +144,10 @@ struct node <br>
 }<br><br>
 
 Can we use a linked list?. Each node of the linked list stores the coefficient and the exponent.Should also store in the sorted order of exponents.<br>
-</br></br></br></br></br></br></br></br></br></br></br></li><li><br>
+</br>
 
-Let us now see how two polynomials can be added.Let P1 and P2 be two polynomials stored as linked lists in sorted (decreasing) order of exponents
-The addition operation is defined as follows.Add terms of like-exponents.We have P1 and P2 arranged in a linked list in decreasing order of exponents.
+Let us now see how two polynomials can be added.Let P1 and P2 be two polynomials stored as linked lists in sorted (decreasing) order of exponents <br> <br>
+The addition operation is defined as follows.Add terms of like-exponents.We have P1 and P2 arranged in a linked list in decreasing order of exponents. <br><br>
 We can scan these and add like terms.Need to store the resulting term only if it has non-zero coefficient.The number of terms in the result polynomial P1+P2 need not be known in advance.We'll use as much space as there are terms in P1+P2.<br><br>
 
 Adding  polynomials :<br>    (3x<sup>5</sup>  9x<sup>3</sup> + 4x<sup>2</sup>) + (8x<sup>5</sup> + 8x<sup>3</sup> + 2)<br>    =  3x<sup>5</sup>  8x<sup>5</sup>  9x<sup>3</sup> + 8x<sup>3</sup> + 4x<sup>2</sup> + 2
@@ -154,7 +155,7 @@ Adding  polynomials :<br>    (3x<sup>5</sup>  9x<sup>3</sup> + 4x<sup>2</s
 
 Multiplying polynomials:<br>    (2x  3)(2x<sup>2</sup> + 3x  2)<br>     = 2x(2x<sup>2</sup> + 3x  2)  3(2x<sup>2</sup> + 3x  2)<br>    = 4x<sup>3</sup> + 6x<sup>2</sup>  4x  6x<sup>2</sup>  9x+ 6<br>    = 4x<sup>3</sup>  13x+ 6
  
-
+</li></ul>
 
 <!-- <img src="images1">pointer</img> -->
 <p><ul><li><b>Why Linked Lists?</b></li><br><li>Linked lists and arrays are similar since they both store collections of data. The terminology is that arrays and linked lists store "elements" on behalf of "client" code. The specific type of element is not important since essentially the same structure works to store elements of any type. One way to think about linked lists is to look at how arrays work and think about alternate approaches.</li><ul>
