@@ -119,9 +119,9 @@ Data Structures
 <p>Answer the following questions with respect to sorting algorithms on arrays. 
 
 <ul>
-<li> <p>1. Are there sorting algorithms that take the same asymptotic runtime irrespective of the input? 
-<li> <p> 2. Most of the algorithms we studied so far made no assumptions on the maximum input values in the input. When some bounds on the input values are known, it is possible to design sorting algorithms that benefit from this knowledge. A simple example is the following: Let A be a set of n numbers whose values are between 1 to O(n). Now, to sort A, declare an array B of size max A[i]. Mark B[i] as 1 iff A[j] = i. Now, print i if B[i] =1 in increasing order of i.  Can you modify this scheme when the maximum number in A in more than O(n), say in O(n^2), while still using only |A| space?
-<li>3. An inversion is a pair of indices $i$ and
+<li> <p> Are there sorting algorithms that take the same asymptotic runtime irrespective of the input? 
+<li> <p> Most of the algorithms we studied so far made no assumptions on the maximum input values in the input. When some bounds on the input values are known, it is possible to design sorting algorithms that benefit from this knowledge. A simple example is the following: Let A be a set of n numbers whose values are between 1 to O(n). Now, to sort A, declare an array B of size max A[i]. Mark B[i] as 1 iff A[j] = i. Now, print i if B[i] =1 in increasing order of i.  Can you modify this scheme when the maximum number in A in more than O(n), say in O(n^2), while still using only |A| space?
+<li> An inversion is a pair of indices $i$ and
 $j$ so that $A[i]$  more than A[j]$ but $i$ is less than j$, i.e., elements are not in the
 natural(sorted) order. Design an algorithm based on sorting algorithms to count the number of inversions in a given array A of n numbers.
 </li></p></li></p></li></ul>
