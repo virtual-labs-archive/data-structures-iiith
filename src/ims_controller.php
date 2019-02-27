@@ -32,15 +32,15 @@ class ims_controller extends Controller
     {
         $uid=$request->session()->get('uid');
         $x=DB::select("select * from div_req where uid=$uid;");
-        echo "comepleted request<br>";
         echo "<br><b>To be processed by admin</b><br>";
         $data = DB::select("select * from div_req d where NOT EXISTS(select req_id from admin_req where req_id=d.req_id)");
         foreach($data as $row){
             $id = $row->{'req_id'};
             $req_content = $row->{'req_content'};
             echo "<p>id=$id</p>
-                  <p>content=$req_content</p>";
+            <p>content=$req_content</p>";
         }
+        echo "completed request<br>";
         foreach($x as $d){
             $id=$d->{'req_id'};
             $data=DB::select("select req_id,count(*) as c from admin_req where req_id=".$id." and rep_content!='None' group by req_id;");
