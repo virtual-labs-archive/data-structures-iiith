@@ -9,7 +9,7 @@
     <meta name="author" content="Virtual Labs - A MHRD Govt of india Initiative">
     
     <title>Welcome to Virtual Labs - A MHRD Govt of india Initiative</title>
-    
+
      <link rel="shortcut icon" href="../images/favicon.ico">
     
  
@@ -25,6 +25,13 @@
     <link href="../css/style.css" rel="stylesheet">
 	<script type="text/javascript" src = 'tabs.js'></script>
 <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-67020197-1', 'auto');ga('send', 'pageview');</script>	
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
 </head>
 <body id="page-top" class="index">
 <div id="top">
@@ -120,9 +127,9 @@ Data Structures
 
 <ul>
 <li> <p> Are there sorting algorithms that take the same asymptotic runtime irrespective of the input? 
-<li> <p> Most of the algorithms we studied so far made no assumptions on the maximum input values in the input. When some bounds on the input values are known, it is possible to design sorting algorithms that benefit from this knowledge. A simple example is the following: Let A be a set of n numbers whose values are between 1 to O(n). Now, to sort A, declare an array B of size max A[i]. Mark B[i] as 1 iff A[j] = i. Now, print i if B[i] =1 in increasing order of i.  Can you modify this scheme when the maximum number in A in more than O(n), say in O(n^2), while still using only |A| space?
+<li> <p> Most of the algorithms we studied so far made no assumptions on the maximum input values in the input. When some bounds on the input values are known, it is possible to design sorting algorithms that benefit from this knowledge. A simple example is the following: Let A be a set of n numbers whose values are between 1 to O(n). Now, to sort A, declare an array B of size max A[i]. Mark B[i] as 1 iff A[j] = i. Now, print i if B[i] =1 in increasing order of i.  Can you modify this scheme when the maximum number in A in more than O(n), say in O($n^2$), while still using only |A| space?
 <li> An inversion is a pair of indices $i$ and
-$j$ so that $A[i]$  more than A[j]$ but $i$ is less than j$, i.e., elements are not in the
+$j$ so that $A[i]$  more than $A[j]$ but $i$ is less than $j$, i.e., elements are not in the
 natural(sorted) order. Design an algorithm based on sorting algorithms to count the number of inversions in a given array A of n numbers.
 </li></p></li></p></li></ul>
 <ul>
@@ -151,7 +158,7 @@ scheme.
 <p> Since it is clear that merge sort can work with only partial data, it
 may be possible to think of a parallel version of merge sort. One can
 view a parallel algorithm as follows. An algorithm is a sequence of
-tasks $T1_, T_2, \cdots$. These tasks may have inter-dependecies, so
+tasks $T_1, T_2, \cdots$. These tasks may have inter-dependecies, so
 that task $T_i$ should be completed before task $T_j$ for some $i,j$.
 However, it is often the case that there are several algorithms where
 many tasks are independent of each other. (In some cases, the algorithm
