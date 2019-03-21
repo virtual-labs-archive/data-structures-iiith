@@ -163,7 +163,7 @@ R respectively. The following performs the merge:</p>
 <p><h4>1.2 Quick Sort</h4>
   <br>
   <li>
-    Let us look at one final example of sorting algorithms along with a short proof of correctness. While merge sort can be said to be optimal in terms of its time requiement, it does use some extra space. So one question to prusue is to design a sorting algorithm that can sort in-place, i.e., without using any extra space.C. A. R. Hoare gave an algorithm based on the divide and conquer strategy called the quick sort that can sort in place. The 3 steps of the algorithm in the framework of divide and conquer are:</li>
+    Let us look at one second example of sorting algorithms along with a short proof of correctness. While merge sort can be said to be optimal in terms of its time requiement, it does use some extra space. So one question to prusue is to design a sorting algorithm that can sort in-place, i.e., without using any extra space.C. A. R. Hoare gave an algorithm based on the divide and conquer strategy called the quick sort that can sort in place. The 3 steps of the algorithm in the framework of divide and conquer are:</li>
   <br>
   <pre>
 ♦ Divide: Divide the input into 3 parts L,E, and R where L &lt; E &lt; R based on a pivot.
@@ -176,18 +176,49 @@ R respectively. The following performs the merge:</p>
     following approach is presented.
   </li>
 <br>
+<p><h4>1.3 Insertion Sort</h4>
+  <br>
+  <li>
+    Let us look at one final example of sorting algorithms.Insertion sort is a simple sorting algorithm that works the way we sort playing cards in our hands.This algorithm builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
+    <img src="../images/insertion.png"> </li>
+  <br>
+  <p style="font-weight:bold">Steps ivolved</p>
   <pre>
+Step 1 − If it is the first element, it is already sorted. return 1;
+Step 2 − Pick next element
+Step 3 − Compare with all elements in the sorted sub-list
+Step 4 − Shift all the elements in the sorted sub-list that is greater than the 
+         value to be sorted
+Step 5 − Insert the value
+Step 6 − Repeat until list is sorted
   <ul>
-    <li> Procedure Parition(A, l, h)</li>
-    <li> pivot = A[h];</li>
-    <li> i = l - 1; 4. for j = p to h - 1 do</li>
-    <li> if A[j] &lt;= pivot</li>
-    <li> i = i + 1;</li>
-<li>swap A[i] with A[j]</li>
-    <li>swap A[i + 1] with A[h]</li>
-    <li>End Procedure</li></p> 
+   <li> procedure insertionSort( A : array of items )</li>
+   <li>int holePosition</li>
+   <li>int valueToInsert</li>
+	
+  <li> for i = 1 to length(A) inclusive do:</li>
+	
+      <li>/* select value to be inserted */</li>
+      <li>valueToInsert = A[i]</li>
+      <li>holePosition = i</li>
+      
+      <li>/*locate hole position for the element to be inserted */</li>
+		
+      <li>while holePosition > 0 and A[holePosition-1] > valueToInsert do:</li>
+         <li>A[holePosition] = A[holePosition-1]</li>
+         <li>holePosition = holePosition -1</li>
+      <li>end while</li>
+		
+      <li>/* insert the number at hole position */</li>
+      <li>A[holePosition] = valueToInsert</li>
+      
+   <li>end for</li>
+	
+<li>end procedure</li>
 </pre></ul>
-</p></div>						</div>
+
+</p>
+</div>						</div>
 </div>
 </div>
 <!-- =================================================================================================================================== -->
