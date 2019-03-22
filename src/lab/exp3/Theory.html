@@ -154,7 +154,7 @@ R respectively. The following performs the merge:</p>
 	<li>Procedure Merge(L,R,A)</li>
 	<li>i = 1, j = 1</li>
 	<li>for k = 1 to l + r do </li>
-	<li>	if L[i] &lt; R[j]</li>
+	<li>	if L[i] &lt; R[j] || j &gt; sizeof R[]</li>
 	<li> 		 A[k] = L[i]; i = i + 1</li>
 	<li>	else </li>
 	<li>		A[k] = R[j]; j = j + 1;</li>
