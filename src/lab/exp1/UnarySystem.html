@@ -1,34 +1,36 @@
 <html>
 <head>
-<!-- Google Analytics Code starts here -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <!-- Google Analytics Code starts here -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-42255654-1', 'virtual-labs.ac.in');
-  ga('send', 'pageview');
+    ga('create', 'UA-42255654-1', 'vlab.co.in');
+    ga('send', 'pageview');
 
-</script>
-<!-- Google Analytics Code ends here -->
+  </script>
+  <!-- Google Analytics Code ends here -->
+  <link rel="stylesheet" href="./UnarySystem.css">
+  <link rel="stylesheet" href="../../../css/bootstrap.min.css">
 </head>
 <body>
-<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" 
-    codebase="http://download.macromedia.com/pub/shockwave/
-    cabs/flash/swflash.cab#version=6,0,40,0" 
-    width=100% height=100% id="intro"> 
-
-  <param name="movie" value="UnarySystem.swf" /> 
-
-  <param name="quality" value="high" /> 
-
-  <embed src="UnarySystem.swf" quality="high"
-      width=100% height=100% name="UnarySystem" align="" 
-      type="application/x-shockwave-flash" 
-      pluginspage="http://www.macromedia.com/go/getflashplayer"> 
-  </embed> 
-
-</object>
+  <div class="main">
+    <div class="w-50 form-group">
+      <label for="num1" class="control-label">Enter the first unary value</label>
+      <textarea id="num1" name="num1" cols="16" class="form-control" maxlength="32" required></textarea>
+      <button class="btn btn-primary" id="add_button" type="submit">ADD</button>
+    </div>
+    <div class="w-50 form-group">
+      <label for="num2" class="control-label">Enter the second unary value</label>
+      <textarea id="num2" name="num2" cols="16" class="form-control" maxlength="32" required></textarea>
+      <button class="btn btn-primary" id="mul_button">MUL</button>
+    </div>
+  </div>
+  <div class="result-container">
+    <p id="result">Enter numbers and press a button to operate.<br>Leave empty for 0.</p>
+  </div>
+  <script src="./UnarySystem.js"></script>
 </body>
 </html>
