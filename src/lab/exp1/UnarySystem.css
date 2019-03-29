@@ -1,0 +1,34 @@
+html {
+  font-size: 2rem;
+}
+
+#num1, #num2 {
+  resize: none;
+  margin: 0.5rem auto;
+  text-align: center;
+}
+
+.main {
+  min-height: 65%;
+  display: flex;
+  width: 90%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.number-input {
+  margin: auto;
+}
+
+.result-container {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+  width: 90%;
+  margin: auto;
+}
+
+
+
