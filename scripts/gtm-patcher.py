@@ -21,14 +21,18 @@ def patch(filepath):
             # soup = BeautifulSoup(txt, 'html.parser')
             soup = BeautifulSoup(txt, "html5lib")
         # insert head snippet into the document
-        mydivs = soup.findAll("script",class_="gtm")
-        if len(mydivs)==0:
+        #mydivs = soup.findAll('script', class_="gtm", limit=1)
+        #if len(mydivs)==0:
+        mydiv = soup.head.find('script', { 'class': 'gtm' })
+        if not mydiv:
             scrTag = Tag(soup, name = 'script')
             scrTag['class'] = "gtm"
             scrTag.string = headSnippet
+            soup.head.insert(0, Comment('End Google Tag Manager'))
             soup.head.insert(0, scrTag)
-            scrTag.insert_before(Comment('Google Tag Manager'))
-            scrTag.insert_after(Comment('End Google Tag Manager'))
+            soup.head.insert(0, Comment('Google Tag Manager'))
+            #scrTag.insert_before(Comment('Google Tag Manager'))
+            #scrTag.insert_after(Comment('End Google Tag Manager'))
 
             # insert body snippet into the document
             iframeTag = Tag(soup, name = 'iframe')
@@ -40,13 +44,15 @@ def patch(filepath):
             noscrTag = Tag(soup, name = 'noscript')
             noscrTag['class'] = 'gtm'
             noscrTag.insert(0, iframeTag)
+            soup.body.insert(0, Comment('End Google Tag Manager (noscript)'))
             soup.body.insert(0, noscrTag)
-            noscrTag.insert_before(Comment('Google Tag Manager (noscript)'))
-            noscrTag.insert_after(Comment('End Google Tag Manager (noscript)'))
+            soup.body.insert(0, Comment('Google Tag Manager (noscript)'))
+            #noscrTag.insert_before(Comment('Google Tag Manager (noscript)'))
+            #noscrTag.insert_after(Comment('End Google Tag Manager (noscript)'))
 
         # save the file again
         with open(filepath, 'w') as outf:
-            outf.write(soup.prettify())
+            outf.write(soup.prettify(formatter='html'))
 
     except IOError as e:
         print "I/O error({0}): {1}".format(e.errno, e.strerror)
