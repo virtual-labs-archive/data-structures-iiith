@@ -184,28 +184,28 @@ Data Structures
                                     <br/> int exponent;
                                     <br/> struct node *next;
                                     <br/> }</li>
-                                                              <br/>
+                                <br/>
                                 <li>Can we use a linked list?. Each node of the linked list stores the coefficient and the exponent.Should also store in the sorted order of exponents.</li>
-                                                               <br/>
+                                <br/>
                                 <li>Let us now see how two polynomials can be added.Let P1 and P2 be two polynomials stored as linked lists in sorted (decreasing) order of exponents</li>
                                 <br/>
-                                                               <li>The addition operation is defined as follows.Add terms of like-exponents.We have P1 and P2 arranged in a linked list in decreasing order of exponents.</li>
+                                <li>The addition operation is defined as follows.Add terms of like-exponents.We have P1 and P2 arranged in a linked list in decreasing order of exponents.</li>
                                 <br/>
-                               
+
                                 <li>We can scan these and add like terms.Need to store the resulting term only if it has non-zero coefficient.The number of terms in the result polynomial P1+P2 need not be known in advance.We'll use as much space as there are terms in P1+P2.</li>
                                 <br/>
-                              
+
                                 <li> Adding polynomials :
-                                    <br/>    (3x<sup>5</sup>  9x<sup>3</sup> + 4x<sup>2</sup>) + (8x<sup>5</sup> + 8x<sup>3</sup> + 2)
-                                    <br/>    =  3x<sup>5</sup>  8x<sup>5</sup>  9x<sup>3</sup> + 8x<sup>3</sup> + 4x<sup>2</sup> + 2
-                                    <br/>    =  5x<sup>5</sup>  x<sup>3</sup> + 4x<sup>2</sup> + 2 </li>
-                               
+                                    <br/> (3x<sup>5</sup>  9x<sup>3</sup> + 4x<sup>2</sup>) + (8x<sup>5</sup> + 8x<sup>3</sup> + 2)
+                                    <br/> = 3x<sup>5</sup>  8x<sup>5</sup>  9x<sup>3</sup> + 8x<sup>3</sup> + 4x<sup>2</sup> + 2
+                                    <br/> = 5x<sup>5</sup>  x<sup>3</sup> + 4x<sup>2</sup> + 2 </li>
+
                                 <br/>
                                 <li>Multiplying polynomials:
-                                    <br/>    (2x  3)(2x<sup>2</sup> + 3x  2)
-                                    <br/>     = 2x(2x<sup>2</sup> + 3x  2)  3(2x<sup>2</sup> + 3x  2)
-                                    <br/>    = 4x<sup>3</sup> + 6x<sup>2</sup>  4x  6x<sup>2</sup>  9x+ 6
-                                    <br/>    = 4x<sup>3</sup>  13x+ 6
+                                    <br/> (2x  3)(2x<sup>2</sup> + 3x  2)
+                                    <br/> = 2x(2x<sup>2</sup> + 3x  2)  3(2x<sup>2</sup> + 3x  2)
+                                    <br/> = 4x<sup>3</sup> + 6x<sup>2</sup>  4x  6x<sup>2</sup>  9x+ 6
+                                    <br/> = 4x<sup>3</sup>  13x+ 6
 
                                 </li>
                             </ul>
@@ -223,8 +223,8 @@ Data Structures
                                         <li>The size of the array is fixed to some elements. Most often this size is specified at compile time with a simple declaration such as in the example above . With a little extra effort, the size of the array can be deferred until the array is created at runtime, but after that it remains fixed. (extra for experts) You can go to the trouble of dynamically allocating an array in the heap and then dynamically resizing it with realloc(), but that requires some real programmer effort.</li>
                                         <li>Because of (1), the most convenient thing for programmers to do is to allocate arrays which seem "large enough". Although convenient, this strategy has two disadvantages:
                                         </li>
-                                        <li>   a)most of the time there are just 20 or 30 elements in the array and 70% of the space in the array really is wasted. </li>
-                                        <li>   b) If the program ever needs to process more than fixed size, the code breaks. A surprising amount of commercial code has this sort of naive array allocation which wastes space most of the time and crashes for special occasions. (Extra for experts) For relatively large arrays (larger than 8k bytes), the virtual memory system may partially compensate for this problem, since the "wasted" elements are never touched.</li>
+                                        <li> a)most of the time there are just 20 or 30 elements in the array and 70% of the space in the array really is wasted. </li>
+                                        <li> b) If the program ever needs to process more than fixed size, the code breaks. A surprising amount of commercial code has this sort of naive array allocation which wastes space most of the time and crashes for special occasions. (Extra for experts) For relatively large arrays (larger than 8k bytes), the virtual memory system may partially compensate for this problem, since the "wasted" elements are never touched.</li>
                                         <li>Inserting new elements at the front is potentially expensive because existing elements need to be shifted over to make room.</li>
                                         <br/>
                                     </ul>
@@ -288,7 +288,7 @@ Data Structures
     </div>
     <!-- top div -->
 
-    <script src="../js/jquery.js"></script>
+    <!--<script src="../js/jquery.js"></script>-->
 
     <!-- Bootstrap Core JavaScript 
     <script src="../js/bootstrap.min.js"></script>-->
@@ -296,7 +296,7 @@ Data Structures
     <!-- Custom Theme JavaScript 
     <script src="../js/custom.js"></script>-->
 
-    <!-- Include js plugin -->
+    <!-- Include js plugin
     <script src="../vendors/owl-carousel/owl.carousel.js"></script>
 
     <script type="text/javascript">
@@ -334,9 +334,7 @@ Data Structures
             });
 
         });
-    </script>
-
-
+    </script>-->
 
 
 
