@@ -174,7 +174,7 @@ Data Structures
                                 <br/>
                                 <li>Let f(x) = Σ<sup>d</sup><sub>i=0</sub> a<sub>i</sub>x<sup>i</sup>.
                                     <br/> The quantity d is called as the degree of the polynomial, with the assumption that a<sub>d</sub> not equal to 0. A polynomial of degree d may however have missing terms i.e., powers j such that 0 &lt;= j &lt; d and a<sub>j</sub> = 0.
-                                    <br/> The standard operations on a polynomial are addition and multiplication. If we store the coefficient ofeach term of the polynomials in an array of size d + 1, then these operations can be supported in a straightforwardway. However, for sparse polynomails, i.e., polynomials where there are few non-zero coefficients, this is not efficient. One possible solution is to use linked lists to store degree, coefficient pairs for non-zero coefficients.With this representation, it makes it easier if we keep the list of such pairs in decreasing order of degrees. A polynomial is a sum of terms.Each term consists of a coefficient and a (common) variable raised to an exponent. We consider only integer exponents, for now.
+                                    <br/> The standard operations on a polynomial are addition and multiplication. If we store the coefficient ofeach term of the polynomials in an array of size d + 1, then these operations can be supported in a straightforwardway. However, for sparse polynomails, i.e., polynomials where there are few non-zero coefficients, this is not efficient. One possible solution is to use linked lists to store degree, coefficient pairs for non-zero coefficients. With this representation, it makes it easier if we keep the list of such pairs in decreasing order of degrees. A polynomial is a sum of terms. Each term consists of a coefficient and a (common) variable raised to an exponent. We consider only integer exponents, for now.
                                     <br/> Example: 4x<sup>3</sup> + 5x  10.</li>
                                 <br/>
                                 <li>How to represent a polynomial? Issues in representation, should not waste space, should be easy to use it for operating on polynomials. Any case, we need to store the coefficient and the exponent.
@@ -185,14 +185,14 @@ Data Structures
                                     <br/> struct node *next;
                                     <br/> }</li>
                                 <br/>
-                                <li>Can we use a linked list?. Each node of the linked list stores the coefficient and the exponent.Should also store in the sorted order of exponents.</li>
+                                <li>Can we use a linked list?. Each node of the linked list stores the coefficient and the exponent. Should also store in the sorted order of exponents.</li>
                                 <br/>
-                                <li>Let us now see how two polynomials can be added.Let P1 and P2 be two polynomials stored as linked lists in sorted (decreasing) order of exponents</li>
+                                <li>Let us now see how two polynomials can be added. Let P1 and P2 be two polynomials stored as linked lists in sorted (decreasing) order of exponents</li>
                                 <br/>
-                                <li>The addition operation is defined as follows.Add terms of like-exponents.We have P1 and P2 arranged in a linked list in decreasing order of exponents.</li>
+                                <li>The addition operation is defined as follows. Add terms of like-exponents. We have P1 and P2 arranged in a linked list in decreasing order of exponents.</li>
                                 <br/>
 
-                                <li>We can scan these and add like terms.Need to store the resulting term only if it has non-zero coefficient.The number of terms in the result polynomial P1+P2 need not be known in advance.We'll use as much space as there are terms in P1+P2.</li>
+                                <li>We can scan these and add like terms. Need to store the resulting term only if it has non-zero coefficient. The number of terms in the result polynomial P1+P2 need not be known in advance. We'll use as much space as there are terms in P1+P2.</li>
                                 <br/>
 
                                 <li> Adding polynomials :
@@ -335,8 +335,6 @@ Data Structures
 
         });
     </script>-->
-
-
 
 
 
