@@ -165,7 +165,7 @@ Data Structures
                                 <li>While we are used to writing A[i] to access element i of an array A, it can be seen as the way to access the ith element in a non-object oriented programming language. The other operations are also not explicity specified when one uses languages such as C. But, when one considers purely object oriented languages, such operations are required to be supported. Similarly, in C, array creation is done by malloc() or a compile time declaration as int A[10];. However, when one looks at a data structure in terms of its operations, a create() operation is required.
                                 </li>
                                 <p></p>
-                                <h3>1.Sorting</h3>
+                                <h3>1. Sorting</h3>
                                 <li>Sorting is a fundamental operation and we shall see two sorting algorithms in this section.</li>
 
                                 <h4>1.1 Merge Sort</h4>
@@ -195,7 +195,19 @@ Data Structures
                                     <br/>
                                 </li>
                                 <li>
-                                    Let us look at one final example of sorting algorithms along with a short proof of correctness. While merge sort can be said to be optimal in terms of its time requiement, it does use some extra space. So one question to prusue is to design a sorting algorithm that can sort in-place, i.e., without using any extra space.C. A. R. Hoare gave an algorithm based on the divide and conquer strategy called the quick sort that can sort in place. The 3 steps of the algorithm in the framework of divide and conquer are:</li>
+                                    Let us look at one final
+                                example of sorting
+                                algorithms along with a
+                                short proof of
+                                correctness. While merge
+                                sort can be said to be
+                                optimal in terms of its time
+                                requiement, it does use some
+                                extra space. So one question
+                                to prusue is to design a
+                                sorting algorithm that can
+                                sort in-place, i.e., without
+                                using any extra space. C. A. R. Hoare gave an algorithm based on the divide and conquer strategy called the quick sort that can sort in place. The 3 steps of the algorithm in the framework of divide and conquer are:</li>
                                 <br/>
                                 <pre>♦ Divide: Divide the input into 3 parts L,E, and R where L &lt; E &lt; R based on a pivot.
 ♦ Conquer: Solve the sorting problem recursively on L and R. Assuming that all the items are distinct,we have that |E| = 1 hence already sorted.
@@ -317,6 +329,7 @@ Data Structures
 
         });
     </script>-->
+
 
 
 

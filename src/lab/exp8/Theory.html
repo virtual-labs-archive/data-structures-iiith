@@ -168,12 +168,11 @@ Data Structures
    end-for<br/>
  end-for<br/>
 <b>End-Bellman-Ford</b><br/>
-<br/><br/></i>
+<br/></i>
                             </p>
                             <p>
                                 The algorithm requires <i>O(mn)</i> time, where <i>n</i> is the number of vertices and <i>m</i> is the number of edges. For each of the <i>n</i>-1 iterations, we consider each edge once.
 
-                                <br/>
                                 <br/>
                             </p>
                             <h3>Dijkstra</h3> The time taken by the Bellman-Ford algorithm is too high because of repeatedly considering edges and updating <i>ds(v)</i> possibly many times. We need to know when to stop updating <i>ds(v)</i> for a vertex <i>v</i> and we will now see a method which captures this and improves the runtime. A vertex <i>v</i> is done, when no further shorter path can be found to it from <i>s</i> i.e., when <i>ds(v)</i> can no longer decrease. We consider a few vertices, say <i>S</i>, are done. A vertex with the smallest <i>ds</i> value among the vertices in <i>V(G) \ S</i> can no longer improve its <i>ds</i> value. This is because, any more change would involved using at least one more additional edge. This suggests that the vertex with the smallest <i>ds</i> value can be moved to the set <i>S</i>. Initially, only the starting vertex <i>s</i> is in the set <i>S</i> and we incrementally populate <i>S</i> with more vertices. We can proceed iteratively and in each iteration, move a vertex with the least <i>ds</i> value to set <i>S</i>. When we move a vertex <i>v</i> to <i>S</i>, the neighbors of <i>v</i> may find a better path from <i>s</i>, so we have to update <i>ds(w)</i> for neighbors <i>w</i> of <i>v</i>, if necessary. The only steps left to take care is, finding a vertex in <i>V(G) \ S</i> that has the least <i>ds</i> value. Also, we have to update the
@@ -198,7 +197,7 @@ Data Structures
 
  end-for<br/>
 <b>End-Dijkstra</b><br/>
-<br/><br/></i>
+<br/></i>
                             </p>
                             <p>
                                 We will analyze the algorithm when using a binary heap. A binary heap is built out of the n nodesa and there are <i>n</i> DeleteMin() operations and at most <i>m</i> DecreaseKey() operations. Each DeleteMin() takes <i>O(log n)</i> time and each DecreaseKey() operation takes <i>O(log n)</i> time. So, the total time is <i>O((n+m)log n)</i>.
@@ -306,6 +305,7 @@ Data Structures
 
         });
     </script>-->
+
 
 
 
