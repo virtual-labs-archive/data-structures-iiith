@@ -175,7 +175,7 @@ Data Structures
                                 <li>Let f(x) = Σ<sup>d</sup><sub>i=0</sub> a<sub>i</sub>x<sup>i</sup>.
                                     <br/> The quantity d is called as the degree of the polynomial, with the assumption that a<sub>d</sub> not equal to 0. A polynomial of degree d may however have missing terms i.e., powers j such that 0 &lt;= j &lt; d and a<sub>j</sub> = 0.
                                     <br/> The standard operations on a polynomial are addition and multiplication. If we store the coefficient ofeach term of the polynomials in an array of size d + 1, then these operations can be supported in a straightforwardway. However, for sparse polynomails, i.e., polynomials where there are few non-zero coefficients, this is not efficient. One possible solution is to use linked lists to store degree, coefficient pairs for non-zero coefficients. With this representation, it makes it easier if we keep the list of such pairs in decreasing order of degrees. A polynomial is a sum of terms. Each term consists of a coefficient and a (common) variable raised to an exponent. We consider only integer exponents, for now.
-                                    <br/> Example: 4x<sup>3</sup> + 5x  10.</li>
+                                    <br/> Example: 4x<sup>3</sup> + 5x − 10.</li>
                                 <br/>
                                 <li>How to represent a polynomial? Issues in representation, should not waste space, should be easy to use it for operating on polynomials. Any case, we need to store the coefficient and the exponent.
                                     <br/> struct node
@@ -196,16 +196,16 @@ Data Structures
                                 <br/>
 
                                 <li> Adding polynomials :
-                                    <br/> (3x<sup>5</sup>  9x<sup>3</sup> + 4x<sup>2</sup>) + (8x<sup>5</sup> + 8x<sup>3</sup> + 2)
-                                    <br/> = 3x<sup>5</sup>  8x<sup>5</sup>  9x<sup>3</sup> + 8x<sup>3</sup> + 4x<sup>2</sup> + 2
-                                    <br/> = 5x<sup>5</sup>  x<sup>3</sup> + 4x<sup>2</sup> + 2 </li>
+                                    <br/> (3x<sup>5</sup> − 9x<sup>3</sup> + 4x<sup>2</sup>) + (−8x<sup>5</sup> + 8x<sup>3</sup> + 2)
+                                    <br/> = 3x<sup>5</sup> − 8x<sup>5</sup> − 9x<sup>3</sup> + 8x<sup>3</sup> + 4x<sup>2</sup> + 2
+                                    <br/> = −5x<sup>5</sup> − x<sup>3</sup> + 4x<sup>2</sup> + 2 </li>
 
                                 <br/>
                                 <li>Multiplying polynomials:
-                                    <br/> (2x  3)(2x<sup>2</sup> + 3x  2)
-                                    <br/> = 2x(2x<sup>2</sup> + 3x  2)  3(2x<sup>2</sup> + 3x  2)
-                                    <br/> = 4x<sup>3</sup> + 6x<sup>2</sup>  4x  6x<sup>2</sup>  9x+ 6
-                                    <br/> = 4x<sup>3</sup>  13x+ 6
+                                    <br/> (2x − 3)(2x<sup>2</sup> + 3x − 2)
+                                    <br/> = 2x(2x<sup>2</sup> + 3x − 2) − 3(2x<sup>2</sup> + 3x − 2)
+                                    <br/> = 4x<sup>3</sup> + 6x<sup>2</sup> − 4x − 6x<sup>2</sup> − 9x+ 6
+                                    <br/> = 4x<sup>3</sup> − 13x+ 6
 
                                 </li>
                             </ul>
@@ -332,6 +332,7 @@ Data Structures
 
         });
     </script>-->
+
 
 
 
