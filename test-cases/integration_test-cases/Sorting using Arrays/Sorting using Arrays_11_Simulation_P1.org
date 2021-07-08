@@ -19,13 +19,13 @@
   1. Click on the  Simulation link 
   2. Check if there are any distortions and junk characters in the  Simulation page
   3. Click on MergeSort link
-  4. Click on the Random Input link and and enter the values in the corresponding fields and click on submit button
+  4. Click on the User Input link and and enter the values in the corresponding fields and click on submit button
 
 * Expected result
   1. Simulatiion page should be opened
   2. Content should be present with no distortions and Junk characters
   3. Anew tab should be opened with the simulation oprocess
-  4. when we click on Random input  link the simulation page should be displayed on the screen and the entered values should be displayed on the screen
+  4. when we click on User Input  link the simulation page should be displayed on the screen and the entered values should be displayed on the screen
   5. When we click on the submit button ,  resulst should be displayed on the screen
 
 * Review/comments
